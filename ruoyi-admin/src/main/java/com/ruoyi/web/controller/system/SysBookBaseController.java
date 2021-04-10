@@ -54,6 +54,15 @@ public class SysBookBaseController extends BaseController
         return getDataTable(list);
     }
 
+    @GetMapping("/lists")
+    @ResponseBody
+    public TableDataInfo lists(SysBookBase sysBookBase)
+    {
+        startPage();
+        List<SysBookBase> list = sysBookBaseService.selectSysBookBaseList(sysBookBase);
+        return getDataTable(list);
+    }
+
     /**
      * 导出图书基本信息列表
      */

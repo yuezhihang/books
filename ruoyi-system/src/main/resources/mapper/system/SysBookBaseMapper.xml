@@ -84,4 +84,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         </foreach>
     </delete>
 
+    <select id="getAllBooksById" resultMap="SysBookBaseResult">
+        select a.* from  sys_book_base a
+        left join sys_house_book sb on sb.book_id = a.business_id
+        where sb.flag=0 and  sb.house_id = #{houseId}
+        order by a.business_id
+    </select>
+
 </mapper>

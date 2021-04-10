@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+    <th:block th:include="include :: header('图书基本信息列表')" />
+</head>
+<body class="gray-bg">
+     <div class="container-div">
+        <div class="row">
+            <div class="col-sm-12 search-collapse">
+                <form id="formId">
+                    <div class="select-list">
+                        <ul>
+                            <li>
+                                <label>图书编号：</label>
+                                <input type="text" name="bookId"/>
+                            </li>
+                            <li>
+                                <label>图书名称：</label>
+                                <input type="text" name="bookName"/>
+                            </li>
+                            <li>
+                                <label>出版社：</label>
+                                <input type="text" name="bookPublish"/>
+                            </li>
+                            <li>
+                                <label>图书作者：</label>
+                                <input type="text" name="bookAuthor"/>
+                            </li>
+                            <li>
+                                <label>图书价格：</label>
+                                <input type="text" name="bookPrice"/>
+                            </li>
+                            <li>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>是否售出：</label>
+                                        <div class="col-sm-9">
+                                            <select class="form-control" name="flag">
+                                                <option value="">所有</option>
+                                                <option value="0">未售出</option>
+                                                <option value="1">已售出</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <a class="btn btn-primary btn-rounded btn-sm" onclick="$.table.search()"><i class="fa fa-search"></i>&nbsp;搜索</a>
+                                <a class="btn btn-warning btn-rounded btn-sm" onclick="$.form.reset()"><i class="fa fa-refresh"></i>&nbsp;重置</a>
+                            </li>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-sm-12 select-table table-striped">
+                <table id="bootstrap-table"></table>
+            </div>
+        </div>
+    </div>
+    <th:block th:include="include :: footer" />
+    <script th:inline="javascript">
+        var prefix = ctx + "system/housebase";
+        console.log(sessionStorage.getItem('houseId'));
+        queryParams = function(param){
+            var comName = [[${comName}]];
+            if(comName!=null&&comName!=""){
+                $("input[name=comName]").val(comName);
+            }
+            var search = {};
+            $.each($("#formId").serializeArray(), function(i, field) {
+                search[field.name] = field.value;
+            });
+            search.pageSize = params.limit;
+            search.pageNum = params.offset / params.limit + 1;
+            search.searchValue = params.search;
+            search.orderByColumn = params.sort;
+            search.isAsc = params.order;
+            return search;
+            var comName =null;
+        }
+        $(function() {
+            var options = {
+                url: prefix + "/list",
+                modalName: "仓库中图书基本信息",
+                queryParams:queryParams,
+                columns: [{
+                    checkbox: true
+                },
+                {
+                    field: 'businessId',
+                    title: '出版日',
+                    visible: false
+                },
+                {
+                    field: 'bookId',
+                    title: '图书编号'
+                },
+                {
+                    field: 'bookName',
+                    title: '图书名称'
+                },
+                {
+                    field: 'bookPublish',
+                    title: '出版社'
+                },
+                {
+                    field: 'bookAuthor',
+                    title: '图书作者'
+                },
+                {
+                    field: 'bookPrice',
+                    title: '图书价格'
+                },
+                {
+                    field: 'flag',
+                    title: '是否售出'
+                },
+                {
+                    field: 'bookPublishDate',
+                    title: '出版日'
+                }
+                ]
+            };
+            $.table.init(options);
+        });
+    </script>
+</body>
+</html>

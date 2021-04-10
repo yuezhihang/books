@@ -2,6 +2,7 @@ package com.ruoyi.system.mapper;
 
 import java.util.List;
 import com.ruoyi.system.domain.SysBookBase;
+import org.apache.ibatis.annotations.Param;
 
 /**
  * 图书基本信息Mapper接口
@@ -58,4 +59,7 @@ public interface SysBookBaseMapper
      * @return 结果
      */
     public int deleteSysBookBaseByIds(String[] businessIds);
+
+
+    public List<SysBookBase> getAllBooksById(@Param("houseId") String houseId);
 }

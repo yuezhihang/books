@@ -2,6 +2,7 @@ package com.ruoyi.system.service;
 
 import java.util.List;
 import com.ruoyi.system.domain.SysBookBase;
+import org.apache.ibatis.annotations.Param;
 
 /**
  * 图书基本信息Service接口
@@ -58,4 +59,6 @@ public interface ISysBookBaseService
      * @return 结果
      */
     public int deleteSysBookBaseById(Long businessId);
+
+    List<SysBookBase> getAllBooksById( String houseId);
 }

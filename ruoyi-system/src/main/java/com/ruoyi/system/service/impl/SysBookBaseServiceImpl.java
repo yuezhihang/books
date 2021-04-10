@@ -14,7 +14,7 @@ import com.ruoyi.common.core.text.Convert;
  * @author ruoyi
  * @date 2021-04-01
  */
-@Service
+@Service("bookBase")
 public class SysBookBaseServiceImpl implements ISysBookBaseService 
 {
     @Autowired
@@ -100,5 +100,10 @@ public class SysBookBaseServiceImpl implements ISysBookBaseService
     public int deleteSysBookBaseById(Long businessId)
     {
         return sysBookBaseMapper.deleteSysBookBaseById(businessId);
+    }
+
+    @Override
+    public List<SysBookBase> getAllBooksById(String houseId) {
+        return sysBookBaseMapper.getAllBooksById(houseId);
     }
 }
