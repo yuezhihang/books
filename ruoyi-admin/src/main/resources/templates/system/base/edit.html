@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:include="include :: header('修改图书基本信息')"/>
+    <th:block th:include="include :: datetimepicker-css"/>
+</head>
+<body class="white-bg">
+<div class="wrapper wrapper-content animated fadeInRight ibox-content">
+    <form class="form-horizontal m" id="form-base-edit" th:object="${sysBookBase}">
+        <input name="businessId" th:field="*{businessId}" type="hidden">
+        <div class="form-group">
+            <label class="col-sm-3 control-label">图书编号：</label>
+            <div class="col-sm-8">
+                <input name="bookId"  th:field="*{bookId}" class="form-control" type="text">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">图书名称：</label>
+            <div class="col-sm-8">
+                <input name="bookName" th:field="*{bookName}" class="form-control" type="text">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">出版社：</label>
+            <div class="col-sm-8">
+                <input name="bookPublish" th:field="*{bookPublish}" class="form-control" type="text">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">图书作者：</label>
+            <div class="col-sm-8">
+                <input name="bookAuthor" th:field="*{bookAuthor}" class="form-control" type="text">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">图书价格：</label>
+            <div class="col-sm-8">
+                <input name="bookPrice" th:field="*{bookPrice}" class="form-control" type="number">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">出售状态：</label>
+            <div class="col-sm-9">
+                <select class="form-control" name="flag">
+                    <option th:value="0">未售出</option>
+                    <option th:value="1">已售出</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">出版日：</label>
+            <div class="col-sm-8">
+                <div class="input-group date">
+                    <input name="bookPublishDate" th:value="${#dates.format(sysBookBase.bookPublishDate, 'yyyy-MM-dd')}"
+                           class="form-control" placeholder="yyyy-MM-dd" type="text">
+                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<th:block th:include="include :: footer"/>
+<th:block th:include="include :: datetimepicker-js"/>
+<script th:inline="javascript">
+    var prefix = ctx + "system/base";
+    $("#form-base-edit").validate({
+        focusCleanup: true
+    });
+
+    function submitHandler() {
+        if ($.validate.form()) {
+            $.operate.save(prefix + "/edit", $('#form-base-edit').serialize());
+        }
+    }
+
+    $("input[name='bookPublishDate']").datetimepicker({
+        format: "yyyy-mm-dd",
+        minView: "month",
+        autoclose: true
+    });
+</script>
+</body>
+</html>

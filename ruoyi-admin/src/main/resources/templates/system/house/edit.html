@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <th:block th:include="include :: header('修改仓库')" />
+</head>
+<body class="white-bg">
+    <div class="wrapper wrapper-content animated fadeInRight ibox-content">
+        <form class="form-horizontal m" id="form-house-edit" th:object="${sysHouse}">
+            <input name="businessId" th:field="*{businessId}" type="hidden">
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">仓库名称：</label>
+                <div class="col-sm-8">
+                    <input name="houseName" th:field="*{houseName}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">仓库容量：</label>
+                <div class="col-sm-8">
+                    <input name="houseNumber" th:field="*{houseNumber}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">仓库中存书量：</label>
+                <div class="col-sm-8">
+                    <input name="houseBooks" th:field="*{houseBooks}" class="form-control" type="text" readonly="readonly">
+                </div>
+            </div>
+        </form>
+    </div>
+    <th:block th:include="include :: footer" />
+    <script th:inline="javascript">
+        var prefix = ctx + "system/house";
+        $("#form-house-edit").validate({
+            focusCleanup: true
+        });
+
+        function submitHandler() {
+            if ($.validate.form()) {
+                $.operate.save(prefix + "/edit", $('#form-house-edit').serialize());
+            }
+        }
+    </script>
+</body>
+</html>

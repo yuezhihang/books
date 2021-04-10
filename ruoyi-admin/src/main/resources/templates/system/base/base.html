@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+    <th:block th:include="include :: header('图书基本信息列表')" />
+</head>
+<body class="gray-bg">
+     <div class="container-div">
+        <div class="row">
+            <div class="col-sm-12 search-collapse">
+                <form id="formId">
+                    <div class="select-list">
+                        <ul>
+                            <li>
+                                <label>图书编号：</label>
+                                <input type="text" name="bookId"/>
+                            </li>
+                            <li>
+                                <label>图书名称：</label>
+                                <input type="text" name="bookName"/>
+                            </li>
+                            <li>
+                                <label>出版社：</label>
+                                <input type="text" name="bookPublish"/>
+                            </li>
+                            <li>
+                                <label>图书作者：</label>
+                                <input type="text" name="bookAuthor"/>
+                            </li>
+                            <li>
+                                <label>图书价格：</label>
+                                <input type="text" name="bookPrice"/>
+                            </li>
+                            <li>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>是否售出：</label>
+                                        <div class="col-sm-9">
+                                            <select class="form-control" name="flag">
+                                                <option value="">所有</option>
+                                                <option value="0">未售出</option>
+                                                <option value="1">已售出</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <label>出版日：</label>
+                                <input type="text" class="time-input" placeholder="请选择出版日" name="bookPublishDate"/>
+                            </li>
+                            <li>
+                                <a class="btn btn-primary btn-rounded btn-sm" onclick="$.table.search()"><i class="fa fa-search"></i>&nbsp;搜索</a>
+                                <a class="btn btn-warning btn-rounded btn-sm" onclick="$.form.reset()"><i class="fa fa-refresh"></i>&nbsp;重置</a>
+                            </li>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+
+            <div class="btn-group-sm" id="toolbar" role="group">
+                <a class="btn btn-success" onclick="$.operate.add()" shiro:hasPermission="system:base:add">
+                    <i class="fa fa-plus"></i> 添加
+                </a>
+                <a class="btn btn-primary single disabled" onclick="$.operate.edit()" shiro:hasPermission="system:base:edit">
+                    <i class="fa fa-edit"></i> 修改
+                </a>
+                <a class="btn btn-danger multiple disabled" onclick="$.operate.removeAll()" shiro:hasPermission="system:base:remove">
+                    <i class="fa fa-remove"></i> 删除
+                </a>
+                <a class="btn btn-warning" onclick="$.table.exportExcel()" shiro:hasPermission="system:base:export">
+                    <i class="fa fa-download"></i> 导出
+                </a>
+            </div>
+            <div class="col-sm-12 select-table table-striped">
+                <table id="bootstrap-table"></table>
+            </div>
+        </div>
+    </div>
+    <th:block th:include="include :: footer" />
+    <script th:inline="javascript">
+        var editFlag = [[${@permission.hasPermi('system:base:edit')}]];
+        var removeFlag = [[${@permission.hasPermi('system:base:remove')}]];
+        var prefix = ctx + "system/base";
+
+        $(function() {
+            var options = {
+                url: prefix + "/list",
+                createUrl: prefix + "/add",
+                updateUrl: prefix + "/edit/{id}",
+                removeUrl: prefix + "/remove",
+                exportUrl: prefix + "/export",
+                modalName: "图书基本信息",
+                columns: [{
+                    checkbox: true
+                },
+                {
+                    field: 'businessId',
+                    title: '出版日',
+                    visible: false
+                },
+                {
+                    field: 'bookId',
+                    title: '图书编号'
+                },
+                {
+                    field: 'bookName',
+                    title: '图书名称'
+                },
+                {
+                    field: 'bookPublish',
+                    title: '出版社'
+                },
+                {
+                    field: 'bookAuthor',
+                    title: '图书作者'
+                },
+                {
+                    field: 'bookPrice',
+                    title: '图书价格'
+                },
+                {
+                    field: 'flag',
+                    title: '是否售出'
+                },
+                {
+                    field: 'bookPublishDate',
+                    title: '出版日'
+                },
+                {
+                    title: '操作',
+                    align: 'center',
+                    formatter: function(value, row, index) {
+                        var actions = [];
+                        actions.push('<a class="btn btn-success btn-xs ' + editFlag + '" href="javascript:void(0)" onclick="$.operate.edit(\'' + row.businessId + '\')"><i class="fa fa-edit"></i>编辑</a> ');
+                        actions.push('<a class="btn btn-danger btn-xs ' + removeFlag + '" href="javascript:void(0)" onclick="$.operate.remove(\'' + row.businessId + '\')"><i class="fa fa-remove"></i>删除</a>');
+                        return actions.join('');
+                    }
+                }]
+            };
+            $.table.init(options);
+        });
+    </script>
+</body>
+</html>

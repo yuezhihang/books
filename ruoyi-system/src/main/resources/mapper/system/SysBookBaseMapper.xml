@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.SysBookBaseMapper">
+    
+    <resultMap type="com.ruoyi.system.domain.SysBookBase" id="SysBookBaseResult">
+        <result property="businessId"    column="business_id"    />
+        <result property="bookId"    column="book_id"    />
+        <result property="bookName"    column="book_name"    />
+        <result property="bookPublish"    column="book_publish"    />
+        <result property="bookAuthor"    column="book_author"    />
+        <result property="bookPrice"    column="book_price"    />
+        <result property="flag"    column="flag"    />
+        <result property="bookPublishDate"    column="book_publish_date"    />
+    </resultMap>
+
+    <sql id="selectSysBookBaseVo">
+        select business_id, book_id, book_name, book_publish, book_author, book_price, flag, book_publish_date from sys_book_base
+    </sql>
+
+    <select id="selectSysBookBaseList" parameterType="com.ruoyi.system.domain.SysBookBase" resultMap="SysBookBaseResult">
+        <include refid="selectSysBookBaseVo"/>
+        <where>
+            <if test="bookId != null  and bookId != ''"> and book_id = #{bookId}</if>
+            <if test="bookName != null  and bookName != ''"> and book_name like concat('%', #{bookName}, '%')</if>
+            <if test="bookPublish != null  and bookPublish != ''"> and book_publish = #{bookPublish}</if>
+            <if test="bookAuthor != null  and bookAuthor != ''"> and book_author = #{bookAuthor}</if>
+            <if test="bookPrice != null  and bookPrice != ''"> and book_price = #{bookPrice}</if>
+            <if test="flag != null  and flag != ''"> and flag = #{flag}</if>
+            <if test="bookPublishDate != null "> and book_publish_date = #{bookPublishDate}</if>
+        </where>
+    </select>
+    
+    <select id="selectSysBookBaseById" parameterType="Long" resultMap="SysBookBaseResult">
+        <include refid="selectSysBookBaseVo"/>
+        where business_id = #{businessId}
+    </select>
+        
+    <insert id="insertSysBookBase" parameterType="com.ruoyi.system.domain.SysBookBase" useGeneratedKeys="true" keyProperty="businessId">
+        insert into sys_book_base
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="bookId != null">book_id,</if>
+            <if test="bookName != null">book_name,</if>
+            <if test="bookPublish != null">book_publish,</if>
+            <if test="bookAuthor != null">book_author,</if>
+            <if test="bookPrice != null">book_price,</if>
+            <if test="flag != null">flag,</if>
+            <if test="bookPublishDate != null">book_publish_date,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="bookId != null">#{bookId},</if>
+            <if test="bookName != null">#{bookName},</if>
+            <if test="bookPublish != null">#{bookPublish},</if>
+            <if test="bookAuthor != null">#{bookAuthor},</if>
+            <if test="bookPrice != null">#{bookPrice},</if>
+            <if test="flag != null">#{flag},</if>
+            <if test="bookPublishDate != null">#{bookPublishDate},</if>
+         </trim>
+    </insert>
+
+    <update id="updateSysBookBase" parameterType="com.ruoyi.system.domain.SysBookBase">
+        update sys_book_base
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="bookId != null">book_id = #{bookId},</if>
+            <if test="bookName != null">book_name = #{bookName},</if>
+            <if test="bookPublish != null">book_publish = #{bookPublish},</if>
+            <if test="bookAuthor != null">book_author = #{bookAuthor},</if>
+            <if test="bookPrice != null">book_price = #{bookPrice},</if>
+            <if test="flag != null">flag = #{flag},</if>
+            <if test="bookPublishDate != null">book_publish_date = #{bookPublishDate},</if>
+        </trim>
+        where business_id = #{businessId}
+    </update>
+
+    <delete id="deleteSysBookBaseById" parameterType="Long">
+        delete from sys_book_base where business_id = #{businessId}
+    </delete>
+
+    <delete id="deleteSysBookBaseByIds" parameterType="String">
+        delete from sys_book_base where business_id in
+        <foreach item="businessId" collection="array" open="(" separator="," close=")">
+            #{businessId}
+        </foreach>
+    </delete>
+
+</mapper>

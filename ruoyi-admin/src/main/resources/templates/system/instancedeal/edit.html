@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:include="include :: header('修改入库申请')"/>
+    <th:block th:include="include :: datetimepicker-css"/>
+</head>
+<body class="white-bg">
+<div class="wrapper wrapper-content animated fadeInRight ibox-content">
+    <form class="form-horizontal m" id="form-instance-edit" th:object="${sysInstance}">
+        <input name="instanceId" th:field="*{instanceId}" type="hidden">
+        <input name="businessId" th:field="*{businessId}" type="hidden">
+        <input name="bookPublishDate" th:value="${#dates.format(sysInstance.bookPublishDate, 'yyyy-MM-dd')}"
+               placeholder="yyyy-MM-dd" type="hidden">
+        <input name="bookId" th:field="*{bookId}" class="form-control" type="hidden">
+
+        <input name="bookName" th:field="*{bookName}" class="form-control" type="hidden">
+
+        <input name="bookPublish" th:field="*{bookPublish}" class="form-control" type="hidden">
+
+        <input name="bookAuthor" th:field="*{bookAuthor}" class="form-control" type="hidden">
+
+        <input name="bookPrice" th:field="*{bookPrice}" class="form-control" type="hidden">
+
+        <label class="col-sm-3 control-label">审批：</label>
+        <div class="col-sm-9">
+            <select class="form-control" name="instanceStatus">
+                <option value="">---</option>
+                <option value="1">通过</option>
+                <option value="2">驳回</option>
+            </select>
+        </div>
+    </form>
+</div>
+<th:block th:include="include :: footer"/>
+<th:block th:include="include :: datetimepicker-js"/>
+<script th:inline="javascript">
+    var prefix = ctx + "system/instancedeal";
+    $("#form-instance-edit").validate({
+        focusCleanup: true
+    });
+
+    function submitHandler() {
+        if ($.validate.form()) {
+            $.operate.save(prefix + "/edit", $('#form-instance-edit').serialize());
+        }
+    }
+
+    $("input[name='bookPublishDate']").datetimepicker({
+        format: "yyyy-mm-dd",
+        minView: "month",
+        autoclose: true
+    });
+
+
+</script>
+</body>
+</html>

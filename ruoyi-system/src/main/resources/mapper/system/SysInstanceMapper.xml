@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.SysInstanceMapper">
+    
+    <resultMap type="com.ruoyi.system.domain.SysInstance" id="SysInstanceResult">
+        <result property="instanceId"    column="instance_id"    />
+        <result property="instanceName"    column="instance_name"    />
+        <result property="instanceStatus"    column="instance_status"    />
+        <result property="createDate"    column="create_date"    />
+        <result property="bookId"    column="book_id"    />
+        <result property="bookName"    column="book_name"    />
+    </resultMap>
+
+    <sql id="selectSysInstanceVo">
+        select s.instance_id, s.instance_name, s.instance_status, s.create_date, s.book_id, sbb.book_name from sys_instance s
+        left join sys_book_base sbb on sbb.business_id = s.book_id
+    </sql>
+
+    <select id="selectSysInstanceList" parameterType="com.ruoyi.system.domain.SysInstance" resultMap="SysInstanceResult">
+        <include refid="selectSysInstanceVo"/>
+        <where>  
+            <if test="instanceName != null  and instanceName != ''"> and s.instance_name like concat('%', #{instanceName}, '%')</if>
+            <if test="instanceStatus != null  and instanceStatus != ''"> and s.instance_status = #{instanceStatus}</if>
+            <if test="createDate != null "> and s.create_date = #{createDate}</if>
+            <if test="bookId != null "> and s.book_id = #{bookId}</if>
+        </where>
+        order by s.create_date desc , s.instance_status asc
+    </select>
+    
+    <select id="selectSysInstanceById" parameterType="Long" resultMap="SysInstanceResult">
+        <include refid="selectSysInstanceVo"/>
+        where instance_id = #{instanceId}
+    </select>
+        
+    <insert id="insertSysInstance" parameterType="com.ruoyi.system.domain.SysInstance">
+        insert into sys_instance
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="instanceId != null">instance_id,</if>
+            <if test="instanceName != null">instance_name,</if>
+            <if test="instanceStatus != null">instance_status,</if>
+            <if test="createDate != null">create_date,</if>
+            <if test="bookId != null">book_id,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="instanceId != null">#{instanceId},</if>
+            <if test="instanceName != null">#{instanceName},</if>
+            <if test="instanceStatus != null">#{instanceStatus},</if>
+            <if test="createDate != null">#{createDate},</if>
+            <if test="bookId != null">#{bookId},</if>
+         </trim>
+    </insert>
+
+    <update id="updateSysInstance" parameterType="com.ruoyi.system.domain.SysInstance">
+        update sys_instance
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="instanceName != null">instance_name = #{instanceName},</if>
+            <if test="instanceStatus != null">instance_status = #{instanceStatus},</if>
+            <if test="createDate != null">create_date = #{createDate},</if>
+            <if test="bookId != null">book_id = #{bookId},</if>
+        </trim>
+        where instance_id = #{instanceId}
+    </update>
+
+    <delete id="deleteSysInstanceById" parameterType="Long">
+        delete from sys_instance where instance_id = #{instanceId}
+    </delete>
+
+    <delete id="deleteSysInstanceByIds" parameterType="String">
+        delete from sys_instance where instance_id in 
+        <foreach item="instanceId" collection="array" open="(" separator="," close=")">
+            #{instanceId}
+        </foreach>
+    </delete>
+
+    <select id="selectInstanceById" resultType="com.ruoyi.system.domain.dto.SysBookAndInstance">
+        select s.instance_id as instanceId, s.instance_status as instanceStatus, s.create_date as createDate,
+        sbb.book_id as bookId, sbb.book_name as bookName , sbb.book_publish as bookPublish , sbb.book_author as bookAuthor
+        ,sbb.book_price as bookPrice , sbb.book_publish_date as bookPublishDate , sbb.business_id as businessId
+        from sys_instance s
+        left join sys_book_base sbb on sbb.business_id = s.book_id
+        where s.instance_id = #{instanceId}
+    </select>
+
+    <select id="getBookIdByIds" resultType="java.lang.String">
+        select book_id from sys_instance where instance_id in
+        <foreach item="instanceId" collection="array" open="(" separator="," close=")">
+            #{instanceId}
+        </foreach>
+    </select>
+
+</mapper>
