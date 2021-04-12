@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.CChaBasesMapper">
+    
+    <resultMap type="com.ruoyi.system.domain.CChaBases" id="CChaBasesResult">
+        <result property="businessId"    column="business_id"    />
+        <result property="chaName"    column="cha_name"    />
+        <result property="chaPlace"    column="cha_place"    />
+        <result property="chaAge"    column="cha_age"    />
+        <result property="chaPrice"    column="cha_price"    />
+        <result property="chaIntroduce"    column="cha_introduce"    />
+    </resultMap>
+
+    <sql id="selectCChaBasesVo">
+        select business_id, cha_name, cha_place, cha_age, cha_price, cha_introduce from c_cha_bases
+    </sql>
+
+    <select id="selectCChaBasesList" parameterType="com.ruoyi.system.domain.CChaBases" resultMap="CChaBasesResult">
+        <include refid="selectCChaBasesVo"/>
+        <where>  
+            <if test="chaName != null  and chaName != ''"> and cha_name like concat('%', #{chaName}, '%')</if>
+            <if test="chaPlace != null  and chaPlace != ''"> and cha_place = #{chaPlace}</if>
+            <if test="chaAge != null  and chaAge != ''"> and cha_age = #{chaAge}</if>
+            <if test="chaPrice != null "> and cha_price = #{chaPrice}</if>
+            <if test="chaIntroduce != null  and chaIntroduce != ''"> and cha_introduce = #{chaIntroduce}</if>
+        </where>
+    </select>
+    
+    <select id="selectCChaBasesById" parameterType="Long" resultMap="CChaBasesResult">
+        <include refid="selectCChaBasesVo"/>
+        where business_id = #{businessId}
+    </select>
+        
+    <insert id="insertCChaBases" parameterType="com.ruoyi.system.domain.CChaBases">
+        insert into c_cha_bases
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="businessId != null">business_id,</if>
+            <if test="chaName != null">cha_name,</if>
+            <if test="chaPlace != null">cha_place,</if>
+            <if test="chaAge != null">cha_age,</if>
+            <if test="chaPrice != null">cha_price,</if>
+            <if test="chaIntroduce != null">cha_introduce,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="businessId != null">#{businessId},</if>
+            <if test="chaName != null">#{chaName},</if>
+            <if test="chaPlace != null">#{chaPlace},</if>
+            <if test="chaAge != null">#{chaAge},</if>
+            <if test="chaPrice != null">#{chaPrice},</if>
+            <if test="chaIntroduce != null">#{chaIntroduce},</if>
+         </trim>
+    </insert>
+
+    <update id="updateCChaBases" parameterType="com.ruoyi.system.domain.CChaBases">
+        update c_cha_bases
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="chaName != null">cha_name = #{chaName},</if>
+            <if test="chaPlace != null">cha_place = #{chaPlace},</if>
+            <if test="chaAge != null">cha_age = #{chaAge},</if>
+            <if test="chaPrice != null">cha_price = #{chaPrice},</if>
+            <if test="chaIntroduce != null">cha_introduce = #{chaIntroduce},</if>
+        </trim>
+        where business_id = #{businessId}
+    </update>
+
+    <delete id="deleteCChaBasesById" parameterType="Long">
+        delete from c_cha_bases where business_id = #{businessId}
+    </delete>
+
+    <delete id="deleteCChaBasesByIds" parameterType="String">
+        delete from c_cha_bases where business_id in 
+        <foreach item="businessId" collection="array" open="(" separator="," close=")">
+            #{businessId}
+        </foreach>
+    </delete>
+
+</mapper>

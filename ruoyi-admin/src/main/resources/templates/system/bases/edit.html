@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <th:block th:include="include :: header('修改茶叶基本信息')" />
+</head>
+<body class="white-bg">
+    <div class="wrapper wrapper-content animated fadeInRight ibox-content">
+        <form class="form-horizontal m" id="form-bases-edit" th:object="${cChaBases}">
+            <input name="businessId" th:field="*{businessId}" type="hidden">
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">茶叶名称：</label>
+                <div class="col-sm-8">
+                    <input name="chaName" th:field="*{chaName}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">产地：</label>
+                <div class="col-sm-8">
+                    <input name="chaPlace" th:field="*{chaPlace}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">年份：</label>
+                <div class="col-sm-8">
+                    <input name="chaAge" th:field="*{chaAge}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">茶叶的单价：</label>
+                <div class="col-sm-8">
+                    <input name="chaPrice" th:field="*{chaPrice}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">茶叶简介：</label>
+                <div class="col-sm-8">
+                    <input name="chaIntroduce" th:field="*{chaIntroduce}" class="form-control" type="text">
+                </div>
+            </div>
+        </form>
+    </div>
+    <th:block th:include="include :: footer" />
+    <script th:inline="javascript">
+        var prefix = ctx + "system/bases";
+        $("#form-bases-edit").validate({
+            focusCleanup: true
+        });
+
+        function submitHandler() {
+            if ($.validate.form()) {
+                $.operate.save(prefix + "/edit", $('#form-bases-edit').serialize());
+            }
+        }
+    </script>
+</body>
+</html>
