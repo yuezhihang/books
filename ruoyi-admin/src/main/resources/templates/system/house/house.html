@@ -42,6 +42,7 @@
     <script th:inline="javascript">
         var editFlag = [[${@permission.hasPermi('system:house:edit')}]];
         var removeFlag = [[${@permission.hasPermi('system:house:remove')}]];
+        var lists = [[${@permission.hasPermi('system:house:lists')}]];
         var prefix = ctx + "system/house";
         function gogogo(param){
             console.log('zhixingle');

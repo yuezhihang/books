@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh" xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
 <head>
     <th:block th:include="include :: header('图书基本信息列表')" />
 </head>
@@ -10,10 +10,6 @@
                 <form id="formId">
                     <div class="select-list">
                         <ul>
-                            <li>
-                                <label>图书编号：</label>
-                                <input type="text" name="bookId"/>
-                            </li>
                             <li>
                                 <label>图书名称：</label>
                                 <input type="text" name="bookName"/>
@@ -27,7 +23,7 @@
                                 <input type="text" name="bookAuthor"/>
                             </li>
                             <li>
-                                <label>图书价格：</label>
+                                <label>书价>：</label>
                                 <input type="text" name="bookPrice"/>
                             </li>
                             <li>
@@ -50,6 +46,7 @@
                             </li>
                         </ul>
                     </div>
+                    <input name="houseId" type="hidden" />
                 </form>
             </div>
 
@@ -61,24 +58,18 @@
     <th:block th:include="include :: footer" />
     <script th:inline="javascript">
         var prefix = ctx + "system/housebase";
-        console.log(sessionStorage.getItem('houseId'));
-        queryParams = function(param){
-            var comName = [[${comName}]];
-            if(comName!=null&&comName!=""){
-                $("input[name=comName]").val(comName);
-            }
+        queryParams = function(){
+            var houseId = sessionStorage.getItem('houseId');
+            $("input[name=houseId]").val(houseId);
+            // console.log(houseId);
             var search = {};
             $.each($("#formId").serializeArray(), function(i, field) {
                 search[field.name] = field.value;
             });
-            search.pageSize = params.limit;
-            search.pageNum = params.offset / params.limit + 1;
-            search.searchValue = params.search;
-            search.orderByColumn = params.sort;
-            search.isAsc = params.order;
+            search[houseId]=houseId.valueOf();
+            console.log(search);
             return search;
-            var comName =null;
-        }
+        };
         $(function() {
             var options = {
                 url: prefix + "/list",

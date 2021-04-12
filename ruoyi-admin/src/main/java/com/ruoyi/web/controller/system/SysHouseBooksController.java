@@ -3,6 +3,7 @@ package com.ruoyi.web.controller.system;
 import com.ruoyi.common.core.controller.BaseController;
 import com.ruoyi.common.core.page.TableDataInfo;
 import com.ruoyi.system.domain.SysBookBase;
+import com.ruoyi.system.domain.SysHouseBook;
 import com.ruoyi.system.service.ISysBookBaseService;
 import org.apache.ibatis.annotations.Param;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
@@ -27,7 +28,7 @@ public class SysHouseBooksController extends BaseController
     @Autowired
     private ISysBookBaseService iSysBookBaseService;
 
-    @RequiresPermissions("system:house:views")
+//    @RequiresPermissions("system:house:views")
     @GetMapping()
     public String book()
     {
@@ -38,13 +39,13 @@ public class SysHouseBooksController extends BaseController
     /**
      * 查询【请填写功能名称】列表
      */
-    @RequiresPermissions("system:house:lists")
+//    @RequiresPermissions("system:house:lists")
     @PostMapping("/list")
     @ResponseBody
-    public TableDataInfo list(String houseId)
+    public TableDataInfo list(SysHouseBook sysHouseBook)
     {
         startPage();
-        List<SysBookBase> list = iSysBookBaseService.getAllBooksById(houseId);
+        List<SysBookBase> list = iSysBookBaseService.getAllBooksById(sysHouseBook);
         return getDataTable(list);
     }
 

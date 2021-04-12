@@ -1,6 +1,8 @@
 package com.ruoyi.system.service.impl;
 
 import java.util.List;
+
+import com.ruoyi.system.domain.SysHouseBook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.ruoyi.system.mapper.SysBookBaseMapper;
@@ -103,7 +105,7 @@ public class SysBookBaseServiceImpl implements ISysBookBaseService
     }
 
     @Override
-    public List<SysBookBase> getAllBooksById(String houseId) {
+    public List<SysBookBase> getAllBooksById(SysHouseBook houseId) {
         return sysBookBaseMapper.getAllBooksById(houseId);
     }
 }

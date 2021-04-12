@@ -2,6 +2,7 @@ package com.ruoyi.system.mapper;
 
 import java.util.List;
 import com.ruoyi.system.domain.SysBookBase;
+import com.ruoyi.system.domain.SysHouseBook;
 import org.apache.ibatis.annotations.Param;
 
 /**
@@ -61,5 +62,5 @@ public interface SysBookBaseMapper
     public int deleteSysBookBaseByIds(String[] businessIds);
 
 
-    public List<SysBookBase> getAllBooksById(@Param("houseId") String houseId);
+    public List<SysBookBase> getAllBooksById(SysHouseBook houseId);
 }

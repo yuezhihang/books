@@ -26,10 +26,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             <if test="bookName != null  and bookName != ''"> and book_name like concat('%', #{bookName}, '%')</if>
             <if test="bookPublish != null  and bookPublish != ''"> and book_publish = #{bookPublish}</if>
             <if test="bookAuthor != null  and bookAuthor != ''"> and book_author = #{bookAuthor}</if>
-            <if test="bookPrice != null  and bookPrice != ''"> and book_price = #{bookPrice}</if>
+            <if test="bookPrice != null  and bookPrice != ''"> and book_price &gt;= #{bookPrice}</if>
             <if test="flag != null  and flag != ''"> and flag = #{flag}</if>
             <if test="bookPublishDate != null "> and book_publish_date = #{bookPublishDate}</if>
         </where>
+        order by flag desc , book_price asc ,business_id desc
     </select>
     
     <select id="selectSysBookBaseById" parameterType="Long" resultMap="SysBookBaseResult">
@@ -87,8 +88,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     <select id="getAllBooksById" resultMap="SysBookBaseResult">
         select a.* from  sys_book_base a
         left join sys_house_book sb on sb.book_id = a.business_id
-        where sb.flag=0 and  sb.house_id = #{houseId}
-        order by a.business_id
+        <where>
+            sb.flag=0 and  sb.house_id = #{houseId}
+            <if test="bookName != null  and bookName != ''"> and a.book_name like concat('%', #{bookName}, '%')</if>
+            <if test="bookPublish != null  and bookPublish != ''"> and a.book_publish = #{bookPublish}</if>
+            <if test="bookAuthor != null  and bookAuthor != ''"> and a.book_author = #{bookAuthor}</if>
+            <if test="bookPrice != null  and bookPrice != ''"> and a.book_price &gt;= #{bookPrice}</if>
+            <if test="flag != null  and flag != ''"> and a.flag = #{flag}</if>
+        </where>
+        order by a.flag desc , a.book_price asc ,a.business_id desc
     </select>
 
 </mapper>

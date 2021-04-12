@@ -34,7 +34,7 @@
         </div>
 
         <div class="btn-group-sm" id="toolbar" role="group">
-            <a class="btn btn-success" onclick="$.operate.add()" shiro:hasPermission="system:instance:add">
+            <a class="btn btn-success" onclick="$.operate.add()" shiro:hasPermission="system:instancedeal:add">
                 <i class="fa fa-plus"></i> 添加
             </a>
             <!--<a class="btn btn-primary single disabled" onclick="$.operate.edit()" shiro:hasPermission="system:instance:edit">-->
@@ -54,8 +54,8 @@
 </div>
 <th:block th:include="include :: footer"/>
 <script th:inline="javascript">
-    var editFlag = [[${@permission.hasPermi('system:instance:edit')}]];
-    var removeFlag = [[${@permission.hasPermi('system:instance:remove')}]];
+    var editFlag = [[${@permission.hasPermi('system:instancedeal:edit')}]];
+    var removeFlag = [[${@permission.hasPermi('system:instancedeal:remove')}]];
     var prefix = ctx + "system/instancedeal";
 
     $(function () {

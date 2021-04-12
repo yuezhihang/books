@@ -33,7 +33,7 @@ public class SysInstanceDealController extends BaseController
     @Autowired
     private ISysInstanceService sysInstanceService;
 
-    @RequiresPermissions("system:instance:view")
+    @RequiresPermissions("system:instancedeal:view")
     @GetMapping()
     public String instance()
     {
@@ -43,7 +43,7 @@ public class SysInstanceDealController extends BaseController
     /**
      * 查询入库申请列表
      */
-    @RequiresPermissions("system:instance:list")
+    @RequiresPermissions("system:instancedeal:list")
     @PostMapping("/list")
     @ResponseBody
     public TableDataInfo list(SysInstance sysInstance)
@@ -56,7 +56,7 @@ public class SysInstanceDealController extends BaseController
     /**
      * 导出入库申请列表
      */
-    @RequiresPermissions("system:instance:export")
+    @RequiresPermissions("system:instancedeal:export")
     @Log(title = "入库申请", businessType = BusinessType.EXPORT)
     @PostMapping("/export")
     @ResponseBody
@@ -79,7 +79,7 @@ public class SysInstanceDealController extends BaseController
     /**
      * 新增保存入库申请
      */
-    @RequiresPermissions("system:instance:add")
+    @RequiresPermissions("system:instancedeal:add")
     @Log(title = "入库申请", businessType = BusinessType.INSERT)
     @PostMapping("/add")
     @ResponseBody
@@ -101,7 +101,7 @@ public class SysInstanceDealController extends BaseController
     /**
      * 修改保存入库申请
      */
-    @RequiresPermissions("system:instance:edit")
+    @RequiresPermissions("system:instancedeal:edit")
     @Log(title = "入库申请", businessType = BusinessType.UPDATE)
     @PostMapping("/edit")
     @ResponseBody
@@ -113,7 +113,7 @@ public class SysInstanceDealController extends BaseController
     /**
      * 删除入库申请
      */
-    @RequiresPermissions("system:instance:remove")
+    @RequiresPermissions("system:instancedeal:remove")
     @Log(title = "入库申请", businessType = BusinessType.DELETE)
     @PostMapping( "/remove")
     @ResponseBody

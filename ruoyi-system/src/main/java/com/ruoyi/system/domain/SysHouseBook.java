@@ -30,7 +30,51 @@ public class SysHouseBook extends BaseEntity
     /** $column.columnComment */
     private Long businessId;
 
-    public void setHouseId(Long houseId) 
+    /** 图书名称 */
+    private String bookName;
+
+    /** 出版社 */
+    private String bookPublish;
+
+    /** 图书作者 */
+    private String bookAuthor;
+
+    /** 图书价格 */
+    private Long bookPrice;
+
+    public String getBookName() {
+        return bookName;
+    }
+
+    public void setBookName(String bookName) {
+        this.bookName = bookName;
+    }
+
+    public String getBookPublish() {
+        return bookPublish;
+    }
+
+    public void setBookPublish(String bookPublish) {
+        this.bookPublish = bookPublish;
+    }
+
+    public String getBookAuthor() {
+        return bookAuthor;
+    }
+
+    public void setBookAuthor(String bookAuthor) {
+        this.bookAuthor = bookAuthor;
+    }
+
+    public Long getBookPrice() {
+        return bookPrice;
+    }
+
+    public void setBookPrice(Long bookPrice) {
+        this.bookPrice = bookPrice;
+    }
+
+    public void setHouseId(Long houseId)
     {
         this.houseId = houseId;
     }
