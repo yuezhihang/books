@@ -178,11 +178,11 @@ public class SysInstanceServiceImpl implements ISysInstanceService
         SysBookBase sysBookBase=new SysBookBase();
         SysHouseBook sysHouseBook=new SysHouseBook();
         BeanUtils.copyProperties(sysInstance,sysBookBase);
-        sysBookBase.setBusinessId(Long.valueOf(sysInstance.getBookId()));
+//        sysBookBase.setBusinessId(Long.valueOf(sysInstance.getBookId()));
         if ("1".equals(sysInstance.getInstanceStatus())){
             sysBookBase.setFlag("0");
         }
-        sysHouseBook.setBookId(Long.valueOf(sysInstance.getBookId()));
+        sysHouseBook.setBookId(Long.valueOf(sysInstance.getBusinessId()));
         sysBookBaseMapper.updateSysBookBase(sysBookBase);
         SysInstance sysInstance1=new SysInstance();
         sysInstance1.setInstanceId(sysInstance.getInstanceId());
