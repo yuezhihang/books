@@ -44,8 +44,8 @@
                 <form id="signupForm" autocomplete="off">
                     <h4 class="no-margins">登录：</h4>
                     <p class="m-t-md">我就蹭蹭不说话，简单看看不搞事</p>
-                    <input type="text"     name="username" class="form-control uname"     placeholder="用户名" value="admin"    />
-                    <input type="password" name="password" class="form-control pword"     placeholder="密码"   value="admin123" />
+                    <input type="text"     name="username" class="form-control uname"  id="username"    placeholder="用户名" value=""    />
+                    <input type="password" name="password" class="form-control pword"  id="password"    placeholder="密码"   value="" />
 					<div class="row m-t" th:if="${captchaEnabled==true}">
 						<div class="col-xs-6">
 						    <input type="text" name="validateCode" class="form-control code" placeholder="验证码" maxlength="5" />
@@ -81,4 +81,17 @@
 <script src="../static/ruoyi/js/ry-ui.js" th:src="@{/ruoyi/js/ry-ui.js?v=4.6.0}"></script>
 <script src="../static/ruoyi/login.js" th:src="@{/ruoyi/login.js}"></script>
 </body>
+<script>
+    function getQueryVariable(variable) {
+        var query = window.location.search.substring(1);
+        var vars = query.split("&");
+        for (var i=0;i<vars.length;i++) {
+            var pair = vars[i].split("=");
+            if(pair[0] == variable){return pair[1];}
+        }
+        return(false);
+    }
+    document.getElementById('username').value = this.getQueryVariable('username')
+    document.getElementById('password').value =  this.getQueryVariable('password')
+</script>
 </html>
