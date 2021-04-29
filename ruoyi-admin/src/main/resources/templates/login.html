@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <title>登录若依系统</title>
+    <title>登录书店书务信息管理系统</title>
     <meta name="description" content="小书屋后台管理框架">
     <link href="../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" rel="stylesheet"/>
     <link href="../static/css/font-awesome.min.css" th:href="@{/css/font-awesome.min.css}" rel="stylesheet"/>
@@ -41,8 +41,8 @@
                 <form id="signupForm" autocomplete="off">
                     <h4 class="no-margins">登录：</h4>
                     <p class="m-t-md">我就蹭蹭不说话，简单看看不搞事</p>
-                    <input type="text"     name="username" class="form-control uname"  id="username"    placeholder="用户名" value=""    />
-                    <input type="password" name="password" class="form-control pword"  id="password"    placeholder="密码"   value="" />
+                    <input type="text"     name="username" class="form-control uname"  id="username"    placeholder="用户名" value="admin"    />
+                    <input type="password" name="password" class="form-control pword"  id="password"    placeholder="密码"   value="admin123" />
 					<div class="row m-t" th:if="${captchaEnabled==true}">
 						<div class="col-xs-6">
 						    <input type="text" name="validateCode" class="form-control code" placeholder="验证码" maxlength="5" />
@@ -90,7 +90,12 @@
         }
         return(false);
     }
-    document.getElementById('username').value = this.getQueryVariable('username')
-    document.getElementById('password').value =  this.getQueryVariable('password')
+    if(''!=this.getQueryVariable('username')) {
+        document.getElementById('username').value = this.getQueryVariable('username')
+        document.getElementById('password').value = this.getQueryVariable('password')
+    }else {
+        document.getElementById('username').value = 'admin'
+        document.getElementById('password').value = 'admin123'
+    }
 </script>
 </html>

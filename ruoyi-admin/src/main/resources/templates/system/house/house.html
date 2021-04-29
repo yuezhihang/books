@@ -32,7 +32,6 @@
                     <i class="fa fa-plus"></i> 添加
                 </a>
             </div>
-            <div style="color: #002a80"> 红色字体数据为低库存剩余图书数量最低预警！！！！！！！！！！！！！！！！！ </div>
             <div class="col-sm-12 select-table table-striped">
                 <table id="bootstrap-table"></table>
             </div>
@@ -71,7 +70,7 @@
                     title: '仓库名称',
                     formatter: function (value, row) {
                         if(Number(row.houseBooks) && Number(row.houseBooks) > 5) {
-                            return `<span onclick="gogogo(${row.businessId})">${row.houseName}</span>>`
+                            return `<span onclick="gogogo(${row.businessId})">${row.houseName}</span>`
                         } else {
                             return `<span style="color: red" onclick="gogogo(${row.businessId})" >${row.houseName}</span>`
                         }
@@ -83,7 +82,7 @@
                     title: '仓库容量',
                     formatter: function (value, row) {
                         if(Number(row.houseBooks) && Number(row.houseBooks) > 5) {
-                            return `<span >${row.houseNumber}</span>>`
+                            return `<span >${row.houseNumber}</span>`
                         } else {
                             return `<span style="color: red;">${row.houseNumber}</span>`
                         }
@@ -95,7 +94,7 @@
                     title: '仓库中存书量',
                     formatter: function (value, row) {
                        if(Number(row.houseBooks) && Number(row.houseBooks) > 5) {
-                           return `<span >${row.houseBooks}</span>>`
+                           return `<span >${row.houseBooks}</span>`
                        } else {
                            return `<span style="color: red;">${row.houseBooks}</span>`
                        }

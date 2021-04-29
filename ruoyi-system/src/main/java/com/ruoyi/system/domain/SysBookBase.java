@@ -38,7 +38,7 @@ public class SysBookBase extends BaseEntity
 
     /** 图书价格 */
     @Excel(name = "图书价格")
-    private Long bookPrice;
+    private Double bookPrice;
 
     /** 是否售出 */
     @Excel(name = "是否售出")
@@ -114,12 +114,12 @@ public class SysBookBase extends BaseEntity
     {
         return bookAuthor;
     }
-    public void setBookPrice(Long bookPrice)
+    public void setBookPrice(Double bookPrice)
     {
         this.bookPrice = bookPrice;
     }
 
-    public Long getBookPrice()
+    public Double getBookPrice()
     {
         return bookPrice;
     }
