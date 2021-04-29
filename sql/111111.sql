@@ -11,7 +11,7 @@
  Target Server Version : 50527
  File Encoding         : 65001
 
- Date: 10/04/2021 08:03:00
+ Date: 29/04/2021 14:16:21
 */
 
 SET NAMES utf8mb4;
@@ -256,7 +256,7 @@ CREATE TABLE `qrtz_scheduler_state`  (
 -- ----------------------------
 -- Records of qrtz_scheduler_state
 -- ----------------------------
-INSERT INTO `qrtz_scheduler_state` VALUES ('RuoyiScheduler', 'BRQE-5Z325J1618012518549', 1618012904379, 15000);
+INSERT INTO `qrtz_scheduler_state` VALUES ('RuoyiScheduler', 'BRQE-5Z325J1619674658500', 1619676972165, 15000);
 
 -- ----------------------------
 -- Table structure for qrtz_simple_triggers
@@ -333,9 +333,9 @@ CREATE TABLE `qrtz_triggers`  (
 -- ----------------------------
 -- Records of qrtz_triggers
 -- ----------------------------
-INSERT INTO `qrtz_triggers` VALUES ('RuoyiScheduler', 'TASK_CLASS_NAME1', 'DEFAULT', 'TASK_CLASS_NAME1', 'DEFAULT', NULL, 1618012520000, -1, 5, 'PAUSED', 'CRON', 1618012518000, 0, NULL, 2, '');
-INSERT INTO `qrtz_triggers` VALUES ('RuoyiScheduler', 'TASK_CLASS_NAME2', 'DEFAULT', 'TASK_CLASS_NAME2', 'DEFAULT', NULL, 1618012530000, -1, 5, 'PAUSED', 'CRON', 1618012518000, 0, NULL, 2, '');
-INSERT INTO `qrtz_triggers` VALUES ('RuoyiScheduler', 'TASK_CLASS_NAME3', 'DEFAULT', 'TASK_CLASS_NAME3', 'DEFAULT', NULL, 1618012520000, -1, 5, 'PAUSED', 'CRON', 1618012518000, 0, NULL, 2, '');
+INSERT INTO `qrtz_triggers` VALUES ('RuoyiScheduler', 'TASK_CLASS_NAME1', 'DEFAULT', 'TASK_CLASS_NAME1', 'DEFAULT', NULL, 1619674660000, -1, 5, 'PAUSED', 'CRON', 1619674658000, 0, NULL, 2, '');
+INSERT INTO `qrtz_triggers` VALUES ('RuoyiScheduler', 'TASK_CLASS_NAME2', 'DEFAULT', 'TASK_CLASS_NAME2', 'DEFAULT', NULL, 1619674665000, -1, 5, 'PAUSED', 'CRON', 1619674658000, 0, NULL, 2, '');
+INSERT INTO `qrtz_triggers` VALUES ('RuoyiScheduler', 'TASK_CLASS_NAME3', 'DEFAULT', 'TASK_CLASS_NAME3', 'DEFAULT', NULL, 1619674660000, -1, 5, 'PAUSED', 'CRON', 1619674658000, 0, NULL, 2, '');
 
 -- ----------------------------
 -- Table structure for sys_book_base
@@ -351,7 +351,7 @@ CREATE TABLE `sys_book_base`  (
   `flag` varchar(2) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '是否售出',
   `book_publish_date` datetime NULL DEFAULT NULL COMMENT '出版日',
   PRIMARY KEY (`business_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 41 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '图书基本信息' ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 48 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '图书基本信息' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of sys_book_base
@@ -364,6 +364,13 @@ INSERT INTO `sys_book_base` VALUES (22, 'A5', '诗经', '', '', '100', '0', NULL
 INSERT INTO `sys_book_base` VALUES (23, 'A6', '论语', '', '', '100', '0', NULL);
 INSERT INTO `sys_book_base` VALUES (24, 'A7', '东周列国志', '', '', '100', '0', NULL);
 INSERT INTO `sys_book_base` VALUES (25, 'A8', '九章', '', '', '100', '0', NULL);
+INSERT INTO `sys_book_base` VALUES (41, '41', '测试啊', '啊', '测试', '1', '0', NULL);
+INSERT INTO `sys_book_base` VALUES (42, '42', '1111', '11111', '11', '11', '0', NULL);
+INSERT INTO `sys_book_base` VALUES (43, '43', '44', '啊啊', '11', '', '0', NULL);
+INSERT INTO `sys_book_base` VALUES (44, '11', '111', '11', '11', '11', NULL, NULL);
+INSERT INTO `sys_book_base` VALUES (45, 'C1', '测', '测', '侧嗯嗯', '111', '0', NULL);
+INSERT INTO `sys_book_base` VALUES (46, '2', '2', '2', '2', '2', '0', NULL);
+INSERT INTO `sys_book_base` VALUES (47, '3', '3', '3', '3', '3', '0', NULL);
 
 -- ----------------------------
 -- Table structure for sys_book_user
@@ -436,12 +443,12 @@ CREATE TABLE `sys_dept`  (
 -- ----------------------------
 -- Records of sys_dept
 -- ----------------------------
-INSERT INTO `sys_dept` VALUES (100, 0, '0', '书务系统', 0, '若依', '15888888888', 'ry@qq.com', '0', '0', 'admin', '2021-04-01 09:40:57', 'admin', '2021-04-06 09:49:59');
-INSERT INTO `sys_dept` VALUES (101, 100, '0,100', '天津小书屋', 1, '若依', '15888888888', 'ry@qq.com', '0', '0', 'admin', '2021-04-01 09:40:57', '', NULL);
-INSERT INTO `sys_dept` VALUES (103, 101, '0,100,101', '研发', 1, '若依', '15888888888', 'ry@qq.com', '0', '0', 'admin', '2021-04-01 09:40:57', '', NULL);
-INSERT INTO `sys_dept` VALUES (105, 101, '0,100,101', '测试', 3, '若依', '15888888888', 'ry@qq.com', '0', '0', 'admin', '2021-04-01 09:40:57', '', NULL);
-INSERT INTO `sys_dept` VALUES (200, 100, '0,100', '仓库小王子', 0, '刘库管', NULL, NULL, '0', '0', 'admin', '2021-04-01 17:54:10', '', NULL);
-INSERT INTO `sys_dept` VALUES (201, 100, '0,100', '入库审批员', 0, '1', '', '', '0', '0', 'admin', '2021-04-06 09:49:48', 'admin', '2021-04-06 09:49:59');
+INSERT INTO `sys_dept` VALUES (100, 0, '0', '书店书务信息管理系统', 0, '111', '15888888888', '11@qq.com', '0', '0', 'admin', '2021-04-01 09:40:57', 'admin', '2021-04-29 13:55:42');
+INSERT INTO `sys_dept` VALUES (101, 100, '0,100', '天津小书屋', 1, '若依', '15888888888', 'ry@qq.com', '0', '2', 'admin', '2021-04-01 09:40:57', '', NULL);
+INSERT INTO `sys_dept` VALUES (103, 100, '0,100', '超级管理员', 1, 'ltz', '15888888888', 'ltz@qq.com', '0', '0', 'admin', '2021-04-01 09:40:57', 'admin', '2021-04-29 13:47:13');
+INSERT INTO `sys_dept` VALUES (105, 100, '0,100', '测试', 3, '若依', '15888888888', 'ry@qq.com', '0', '2', 'admin', '2021-04-01 09:40:57', 'admin', '2021-04-29 13:46:34');
+INSERT INTO `sys_dept` VALUES (200, 100, '0,100', '仓库管理员', 0, '刘库管', '', '', '0', '0', 'admin', '2021-04-01 17:54:10', 'admin', '2021-04-29 13:50:14');
+INSERT INTO `sys_dept` VALUES (201, 100, '0,100', '书务管理员', 0, '1', '', '', '0', '0', 'admin', '2021-04-06 09:49:48', 'admin', '2021-04-29 13:50:37');
 
 -- ----------------------------
 -- Table structure for sys_dict_data
@@ -543,11 +550,12 @@ CREATE TABLE `sys_house`  (
   `house_number` int(11) NULL DEFAULT NULL COMMENT '仓库容量',
   `house_books` int(64) NULL DEFAULT NULL COMMENT '仓库中存书量',
   PRIMARY KEY (`business_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '仓库表' ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '仓库表' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of sys_house
 -- ----------------------------
+INSERT INTO `sys_house` VALUES (3, '测试', 100, 6);
 
 -- ----------------------------
 -- Table structure for sys_house_book
@@ -559,18 +567,18 @@ CREATE TABLE `sys_house_book`  (
   `flag` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '0已通过 1 未通过',
   `business_id` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`business_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 18 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of sys_house_book
 -- ----------------------------
-INSERT INTO `sys_house_book` VALUES (1, 34, '1', 4);
-INSERT INTO `sys_house_book` VALUES (1, 35, '1', 5);
-INSERT INTO `sys_house_book` VALUES (1, 36, '1', 6);
-INSERT INTO `sys_house_book` VALUES (1, 37, '1', 7);
-INSERT INTO `sys_house_book` VALUES (1, 38, '0', 8);
-INSERT INTO `sys_house_book` VALUES (1, 39, '1', 9);
-INSERT INTO `sys_house_book` VALUES (1, 40, '1', 10);
+INSERT INTO `sys_house_book` VALUES (3, 41, '0', 11);
+INSERT INTO `sys_house_book` VALUES (3, 42, '0', 12);
+INSERT INTO `sys_house_book` VALUES (3, 43, '0', 13);
+INSERT INTO `sys_house_book` VALUES (3, 44, '1', 14);
+INSERT INTO `sys_house_book` VALUES (3, 45, '0', 15);
+INSERT INTO `sys_house_book` VALUES (3, 46, '0', 16);
+INSERT INTO `sys_house_book` VALUES (3, 47, '0', 17);
 
 -- ----------------------------
 -- Table structure for sys_instance
@@ -583,11 +591,18 @@ CREATE TABLE `sys_instance`  (
   `create_date` datetime NULL DEFAULT NULL COMMENT '创建时间',
   `book_id` int(11) NULL DEFAULT NULL COMMENT '书的关联business_id',
   PRIMARY KEY (`instance_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 23 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '入库申请表' ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 30 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '入库申请表' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of sys_instance
 -- ----------------------------
+INSERT INTO `sys_instance` VALUES (23, NULL, '1', '2021-04-10 08:24:17', 41);
+INSERT INTO `sys_instance` VALUES (24, NULL, '1', '2021-04-10 08:26:55', 42);
+INSERT INTO `sys_instance` VALUES (25, NULL, '1', '2021-04-10 08:29:51', 43);
+INSERT INTO `sys_instance` VALUES (26, NULL, '1', '2021-04-10 08:30:24', 44);
+INSERT INTO `sys_instance` VALUES (27, NULL, '1', '2021-04-23 14:10:23', 45);
+INSERT INTO `sys_instance` VALUES (28, NULL, '1', '2021-04-29 13:29:16', 46);
+INSERT INTO `sys_instance` VALUES (29, NULL, '1', '2021-04-29 13:29:47', 47);
 
 -- ----------------------------
 -- Table structure for sys_job
@@ -652,7 +667,7 @@ CREATE TABLE `sys_logininfor`  (
   `msg` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '' COMMENT '提示消息',
   `login_time` datetime NULL DEFAULT NULL COMMENT '访问时间',
   PRIMARY KEY (`info_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 224 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '系统访问记录' ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 380 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '系统访问记录' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of sys_logininfor
@@ -781,6 +796,162 @@ INSERT INTO `sys_logininfor` VALUES (220, 'admin', '127.0.0.1', '内网IP', 'Chr
 INSERT INTO `sys_logininfor` VALUES (221, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-10 07:49:30');
 INSERT INTO `sys_logininfor` VALUES (222, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '1', '验证码错误', '2021-04-10 07:55:32');
 INSERT INTO `sys_logininfor` VALUES (223, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-10 07:55:34');
+INSERT INTO `sys_logininfor` VALUES (224, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-10 08:23:12');
+INSERT INTO `sys_logininfor` VALUES (225, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-10 08:26:42');
+INSERT INTO `sys_logininfor` VALUES (226, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-10 08:35:46');
+INSERT INTO `sys_logininfor` VALUES (227, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '1', '验证码错误', '2021-04-10 09:08:07');
+INSERT INTO `sys_logininfor` VALUES (228, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-10 09:08:11');
+INSERT INTO `sys_logininfor` VALUES (229, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-10 10:34:24');
+INSERT INTO `sys_logininfor` VALUES (230, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-10 11:05:57');
+INSERT INTO `sys_logininfor` VALUES (231, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '1', '验证码错误', '2021-04-10 11:20:37');
+INSERT INTO `sys_logininfor` VALUES (232, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '1', '验证码错误', '2021-04-10 11:20:41');
+INSERT INTO `sys_logininfor` VALUES (233, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '1', '验证码错误', '2021-04-10 11:20:47');
+INSERT INTO `sys_logininfor` VALUES (234, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-10 11:20:49');
+INSERT INTO `sys_logininfor` VALUES (235, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-10 11:42:47');
+INSERT INTO `sys_logininfor` VALUES (236, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '1', '密码输入错误1次', '2021-04-10 14:04:31');
+INSERT INTO `sys_logininfor` VALUES (237, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '1', '验证码错误', '2021-04-10 14:04:42');
+INSERT INTO `sys_logininfor` VALUES (238, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '1', '密码输入错误2次', '2021-04-10 14:04:45');
+INSERT INTO `sys_logininfor` VALUES (239, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-10 14:04:52');
+INSERT INTO `sys_logininfor` VALUES (240, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-10 15:25:28');
+INSERT INTO `sys_logininfor` VALUES (241, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-10 16:02:31');
+INSERT INTO `sys_logininfor` VALUES (242, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-10 16:07:24');
+INSERT INTO `sys_logininfor` VALUES (243, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '1', '验证码错误', '2021-04-10 16:09:31');
+INSERT INTO `sys_logininfor` VALUES (244, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-10 16:09:34');
+INSERT INTO `sys_logininfor` VALUES (245, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-10 16:11:15');
+INSERT INTO `sys_logininfor` VALUES (246, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-10 16:29:43');
+INSERT INTO `sys_logininfor` VALUES (247, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-10 16:30:37');
+INSERT INTO `sys_logininfor` VALUES (248, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-10 16:59:58');
+INSERT INTO `sys_logininfor` VALUES (249, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-10 17:00:46');
+INSERT INTO `sys_logininfor` VALUES (250, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-10 17:02:10');
+INSERT INTO `sys_logininfor` VALUES (251, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '1', '验证码错误', '2021-04-10 17:06:45');
+INSERT INTO `sys_logininfor` VALUES (252, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-10 17:06:48');
+INSERT INTO `sys_logininfor` VALUES (253, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-10 17:21:47');
+INSERT INTO `sys_logininfor` VALUES (254, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-10 17:26:44');
+INSERT INTO `sys_logininfor` VALUES (255, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-10 17:27:29');
+INSERT INTO `sys_logininfor` VALUES (256, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-10 17:36:00');
+INSERT INTO `sys_logininfor` VALUES (257, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-10 18:36:34');
+INSERT INTO `sys_logininfor` VALUES (258, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-10 18:40:30');
+INSERT INTO `sys_logininfor` VALUES (259, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-12 09:17:03');
+INSERT INTO `sys_logininfor` VALUES (260, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-12 09:24:29');
+INSERT INTO `sys_logininfor` VALUES (261, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-12 10:26:35');
+INSERT INTO `sys_logininfor` VALUES (262, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-12 10:29:06');
+INSERT INTO `sys_logininfor` VALUES (263, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '1', '验证码错误', '2021-04-12 10:36:09');
+INSERT INTO `sys_logininfor` VALUES (264, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-12 10:36:14');
+INSERT INTO `sys_logininfor` VALUES (265, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-12 10:40:17');
+INSERT INTO `sys_logininfor` VALUES (266, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-12 10:44:42');
+INSERT INTO `sys_logininfor` VALUES (267, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-12 10:49:19');
+INSERT INTO `sys_logininfor` VALUES (268, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-12 10:52:27');
+INSERT INTO `sys_logininfor` VALUES (269, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '退出成功', '2021-04-12 10:58:02');
+INSERT INTO `sys_logininfor` VALUES (270, '刘审批', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '1', '验证码错误', '2021-04-12 10:58:05');
+INSERT INTO `sys_logininfor` VALUES (271, '刘审批', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-12 10:58:08');
+INSERT INTO `sys_logininfor` VALUES (272, '刘审批', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '退出成功', '2021-04-12 10:58:16');
+INSERT INTO `sys_logininfor` VALUES (273, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '1', '验证码错误', '2021-04-12 10:58:17');
+INSERT INTO `sys_logininfor` VALUES (274, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-12 10:58:22');
+INSERT INTO `sys_logininfor` VALUES (275, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '退出成功', '2021-04-12 10:58:35');
+INSERT INTO `sys_logininfor` VALUES (276, '刘审批', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '1', '验证码错误', '2021-04-12 10:58:41');
+INSERT INTO `sys_logininfor` VALUES (277, '刘审批', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-12 10:58:43');
+INSERT INTO `sys_logininfor` VALUES (278, '刘审批', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '退出成功', '2021-04-12 10:58:56');
+INSERT INTO `sys_logininfor` VALUES (279, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '1', '验证码错误', '2021-04-12 10:58:58');
+INSERT INTO `sys_logininfor` VALUES (280, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-12 10:59:05');
+INSERT INTO `sys_logininfor` VALUES (281, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '退出成功', '2021-04-12 11:02:06');
+INSERT INTO `sys_logininfor` VALUES (282, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '1', '验证码错误', '2021-04-12 11:02:09');
+INSERT INTO `sys_logininfor` VALUES (283, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '1', '验证码错误', '2021-04-12 11:02:10');
+INSERT INTO `sys_logininfor` VALUES (284, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '1', '验证码错误', '2021-04-12 11:02:13');
+INSERT INTO `sys_logininfor` VALUES (285, '刘审批', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-12 11:02:19');
+INSERT INTO `sys_logininfor` VALUES (286, '刘审批', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '退出成功', '2021-04-12 11:03:01');
+INSERT INTO `sys_logininfor` VALUES (287, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-12 11:03:04');
+INSERT INTO `sys_logininfor` VALUES (288, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-12 11:03:57');
+INSERT INTO `sys_logininfor` VALUES (289, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '退出成功', '2021-04-12 11:04:05');
+INSERT INTO `sys_logininfor` VALUES (290, '刘审批', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-12 11:04:12');
+INSERT INTO `sys_logininfor` VALUES (291, '刘审批', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '退出成功', '2021-04-12 11:04:22');
+INSERT INTO `sys_logininfor` VALUES (292, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '1', '验证码错误', '2021-04-12 11:04:25');
+INSERT INTO `sys_logininfor` VALUES (293, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-12 11:04:28');
+INSERT INTO `sys_logininfor` VALUES (294, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '退出成功', '2021-04-12 11:04:47');
+INSERT INTO `sys_logininfor` VALUES (295, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '1', '验证码错误', '2021-04-12 11:04:50');
+INSERT INTO `sys_logininfor` VALUES (296, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-12 11:04:53');
+INSERT INTO `sys_logininfor` VALUES (297, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '退出成功', '2021-04-12 11:04:59');
+INSERT INTO `sys_logininfor` VALUES (298, '刘审批', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-12 11:05:06');
+INSERT INTO `sys_logininfor` VALUES (299, '刘审批', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '退出成功', '2021-04-12 11:05:23');
+INSERT INTO `sys_logininfor` VALUES (300, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-12 11:05:26');
+INSERT INTO `sys_logininfor` VALUES (301, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '1', '验证码错误', '2021-04-12 11:06:41');
+INSERT INTO `sys_logininfor` VALUES (302, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-12 11:06:43');
+INSERT INTO `sys_logininfor` VALUES (303, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '退出成功', '2021-04-12 11:07:11');
+INSERT INTO `sys_logininfor` VALUES (304, '刘审批', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-12 11:07:15');
+INSERT INTO `sys_logininfor` VALUES (305, '刘审批', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '1', '验证码错误', '2021-04-12 11:08:39');
+INSERT INTO `sys_logininfor` VALUES (306, '刘审批', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-12 11:08:41');
+INSERT INTO `sys_logininfor` VALUES (307, '刘审批', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-12 11:09:24');
+INSERT INTO `sys_logininfor` VALUES (308, '刘审批', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '退出成功', '2021-04-12 11:09:55');
+INSERT INTO `sys_logininfor` VALUES (309, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '1', '验证码错误', '2021-04-12 11:10:05');
+INSERT INTO `sys_logininfor` VALUES (310, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-12 11:10:08');
+INSERT INTO `sys_logininfor` VALUES (311, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '退出成功', '2021-04-12 11:12:21');
+INSERT INTO `sys_logininfor` VALUES (312, '刘审批', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '1', '验证码错误', '2021-04-12 11:12:25');
+INSERT INTO `sys_logininfor` VALUES (313, '刘审批', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-12 11:12:27');
+INSERT INTO `sys_logininfor` VALUES (314, '刘审批', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '退出成功', '2021-04-12 11:13:36');
+INSERT INTO `sys_logininfor` VALUES (315, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-12 11:13:39');
+INSERT INTO `sys_logininfor` VALUES (316, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '退出成功', '2021-04-12 11:17:37');
+INSERT INTO `sys_logininfor` VALUES (317, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-12 11:17:40');
+INSERT INTO `sys_logininfor` VALUES (318, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '退出成功', '2021-04-12 11:17:50');
+INSERT INTO `sys_logininfor` VALUES (319, '刘审批', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-12 11:17:56');
+INSERT INTO `sys_logininfor` VALUES (320, '刘审批', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '退出成功', '2021-04-12 11:18:42');
+INSERT INTO `sys_logininfor` VALUES (321, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-12 11:18:50');
+INSERT INTO `sys_logininfor` VALUES (322, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '退出成功', '2021-04-12 11:20:12');
+INSERT INTO `sys_logininfor` VALUES (323, '刘审批', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-12 11:20:17');
+INSERT INTO `sys_logininfor` VALUES (324, '刘审批', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '退出成功', '2021-04-12 11:20:34');
+INSERT INTO `sys_logininfor` VALUES (325, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-12 11:20:38');
+INSERT INTO `sys_logininfor` VALUES (326, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '退出成功', '2021-04-12 11:22:34');
+INSERT INTO `sys_logininfor` VALUES (327, '刘审批', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-12 11:22:41');
+INSERT INTO `sys_logininfor` VALUES (328, '刘审批', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '退出成功', '2021-04-12 11:23:25');
+INSERT INTO `sys_logininfor` VALUES (329, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-12 11:23:28');
+INSERT INTO `sys_logininfor` VALUES (330, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-12 11:29:13');
+INSERT INTO `sys_logininfor` VALUES (331, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '退出成功', '2021-04-12 11:29:19');
+INSERT INTO `sys_logininfor` VALUES (332, '刘审批', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-12 11:29:24');
+INSERT INTO `sys_logininfor` VALUES (333, '刘审批', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '退出成功', '2021-04-12 11:30:25');
+INSERT INTO `sys_logininfor` VALUES (334, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '1', '验证码错误', '2021-04-12 11:30:27');
+INSERT INTO `sys_logininfor` VALUES (335, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-12 11:30:28');
+INSERT INTO `sys_logininfor` VALUES (336, '刘审批', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-12 11:31:54');
+INSERT INTO `sys_logininfor` VALUES (337, '刘审批', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '退出成功', '2021-04-12 11:32:59');
+INSERT INTO `sys_logininfor` VALUES (338, '刘库管', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-12 11:33:06');
+INSERT INTO `sys_logininfor` VALUES (339, '刘库管', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '退出成功', '2021-04-12 11:33:19');
+INSERT INTO `sys_logininfor` VALUES (340, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-20 18:23:48');
+INSERT INTO `sys_logininfor` VALUES (341, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-20 18:24:56');
+INSERT INTO `sys_logininfor` VALUES (342, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '退出成功', '2021-04-20 18:25:49');
+INSERT INTO `sys_logininfor` VALUES (343, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-20 18:25:53');
+INSERT INTO `sys_logininfor` VALUES (344, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-20 19:31:45');
+INSERT INTO `sys_logininfor` VALUES (345, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-20 19:39:28');
+INSERT INTO `sys_logininfor` VALUES (346, 'admin', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '登录成功', '2021-04-23 14:10:02');
+INSERT INTO `sys_logininfor` VALUES (347, 'admin', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '登录成功', '2021-04-23 14:15:41');
+INSERT INTO `sys_logininfor` VALUES (348, 'admin', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '登录成功', '2021-04-23 14:20:02');
+INSERT INTO `sys_logininfor` VALUES (349, 'admin', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '登录成功', '2021-04-23 14:21:29');
+INSERT INTO `sys_logininfor` VALUES (350, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-28 15:26:05');
+INSERT INTO `sys_logininfor` VALUES (351, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '退出成功', '2021-04-28 15:43:26');
+INSERT INTO `sys_logininfor` VALUES (352, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '1', '验证码错误', '2021-04-28 16:03:37');
+INSERT INTO `sys_logininfor` VALUES (353, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-28 16:03:41');
+INSERT INTO `sys_logininfor` VALUES (354, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '退出成功', '2021-04-28 16:19:08');
+INSERT INTO `sys_logininfor` VALUES (355, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '1', '验证码错误', '2021-04-28 16:21:47');
+INSERT INTO `sys_logininfor` VALUES (356, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-28 16:21:55');
+INSERT INTO `sys_logininfor` VALUES (357, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '退出成功', '2021-04-28 16:22:31');
+INSERT INTO `sys_logininfor` VALUES (358, 'false', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '1', '验证码错误', '2021-04-28 16:23:17');
+INSERT INTO `sys_logininfor` VALUES (359, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-28 16:23:25');
+INSERT INTO `sys_logininfor` VALUES (360, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '退出成功', '2021-04-28 16:29:19');
+INSERT INTO `sys_logininfor` VALUES (361, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '1', '验证码错误', '2021-04-28 16:29:47');
+INSERT INTO `sys_logininfor` VALUES (362, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-28 16:29:50');
+INSERT INTO `sys_logininfor` VALUES (363, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '1', '验证码错误', '2021-04-28 16:30:13');
+INSERT INTO `sys_logininfor` VALUES (364, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-28 16:30:15');
+INSERT INTO `sys_logininfor` VALUES (365, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-28 16:42:43');
+INSERT INTO `sys_logininfor` VALUES (366, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '退出成功', '2021-04-28 16:42:56');
+INSERT INTO `sys_logininfor` VALUES (367, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-28 16:43:03');
+INSERT INTO `sys_logininfor` VALUES (368, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '退出成功', '2021-04-28 16:43:13');
+INSERT INTO `sys_logininfor` VALUES (369, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-28 16:46:16');
+INSERT INTO `sys_logininfor` VALUES (370, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-29 13:26:11');
+INSERT INTO `sys_logininfor` VALUES (371, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-29 13:32:25');
+INSERT INTO `sys_logininfor` VALUES (372, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-29 13:40:22');
+INSERT INTO `sys_logininfor` VALUES (373, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '退出成功', '2021-04-29 13:53:11');
+INSERT INTO `sys_logininfor` VALUES (374, '刘审批', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-29 13:53:30');
+INSERT INTO `sys_logininfor` VALUES (375, '刘审批', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '退出成功', '2021-04-29 13:53:44');
+INSERT INTO `sys_logininfor` VALUES (376, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '1', '验证码错误', '2021-04-29 13:53:47');
+INSERT INTO `sys_logininfor` VALUES (377, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-29 13:53:52');
+INSERT INTO `sys_logininfor` VALUES (378, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '退出成功', '2021-04-29 14:02:57');
+INSERT INTO `sys_logininfor` VALUES (379, 'admin', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', '0', '登录成功', '2021-04-29 14:09:59');
 
 -- ----------------------------
 -- Table structure for sys_menu
@@ -804,23 +975,23 @@ CREATE TABLE `sys_menu`  (
   `update_time` datetime NULL DEFAULT NULL COMMENT '更新时间',
   `remark` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '' COMMENT '备注',
   PRIMARY KEY (`menu_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2019 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '菜单权限表' ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 2029 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '菜单权限表' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of sys_menu
 -- ----------------------------
 INSERT INTO `sys_menu` VALUES (1, '系统管理', 0, 1, '#', '', 'M', '0', '1', '', 'fa fa-gear', 'admin', '2021-04-01 09:40:57', '', NULL, '系统管理目录');
 INSERT INTO `sys_menu` VALUES (2, '系统监控', 0, 6, '#', 'menuItem', 'M', '1', '1', '', 'fa fa-video-camera', 'admin', '2021-04-01 09:40:57', 'admin', '2021-04-06 14:44:34', '系统监控目录');
-INSERT INTO `sys_menu` VALUES (3, '系统工具', 0, 3, '#', '', 'M', '0', '1', '', 'fa fa-bars', 'admin', '2021-04-01 09:40:57', '', NULL, '系统工具目录');
-INSERT INTO `sys_menu` VALUES (4, '若依官网', 0, 4, 'http://ruoyi.vip', 'menuBlank', 'C', '1', '1', '', 'fa fa-location-arrow', 'admin', '2021-04-01 09:40:57', 'admin', '2021-04-06 14:44:23', '若依官网地址');
+INSERT INTO `sys_menu` VALUES (3, '系统工具', 0, 3, '#', 'menuItem', 'M', '1', '1', '', 'fa fa-bars', 'admin', '2021-04-01 09:40:57', 'admin', '2021-04-12 10:54:54', '系统工具目录');
+INSERT INTO `sys_menu` VALUES (4, '---', 0, 4, 'http://ruoyi.vip', 'menuBlank', 'C', '1', '1', '', 'fa fa-location-arrow', 'admin', '2021-04-01 09:40:57', 'admin', '2021-04-12 10:54:35', '若依官网地址');
 INSERT INTO `sys_menu` VALUES (100, '用户管理', 1, 1, '/system/user', '', 'C', '0', '1', 'system:user:view', 'fa fa-user-o', 'admin', '2021-04-01 09:40:57', '', NULL, '用户管理菜单');
 INSERT INTO `sys_menu` VALUES (101, '角色管理', 1, 2, '/system/role', '', 'C', '0', '1', 'system:role:view', 'fa fa-user-secret', 'admin', '2021-04-01 09:40:57', '', NULL, '角色管理菜单');
 INSERT INTO `sys_menu` VALUES (102, '菜单管理', 1, 3, '/system/menu', '', 'C', '0', '1', 'system:menu:view', 'fa fa-th-list', 'admin', '2021-04-01 09:40:57', '', NULL, '菜单管理菜单');
-INSERT INTO `sys_menu` VALUES (103, '部门管理', 1, 4, '/system/dept', '', 'C', '0', '1', 'system:dept:view', 'fa fa-outdent', 'admin', '2021-04-01 09:40:57', '', NULL, '部门管理菜单');
-INSERT INTO `sys_menu` VALUES (104, '岗位管理', 1, 5, '/system/post', '', 'C', '0', '1', 'system:post:view', 'fa fa-address-card-o', 'admin', '2021-04-01 09:40:57', '', NULL, '岗位管理菜单');
+INSERT INTO `sys_menu` VALUES (103, '部门管理', 1, 4, '/system/dept', 'menuItem', 'C', '1', '0', 'system:dept:view', 'fa fa-outdent', 'admin', '2021-04-01 09:40:57', 'admin', '2021-04-29 13:55:58', '部门管理菜单');
+INSERT INTO `sys_menu` VALUES (104, '岗位管理', 1, 5, '/system/post', 'menuItem', 'C', '1', '1', 'system:post:view', 'fa fa-address-card-o', 'admin', '2021-04-01 09:40:57', 'admin', '2021-04-12 10:53:51', '岗位管理菜单');
 INSERT INTO `sys_menu` VALUES (105, '字典管理', 1, 6, '/system/dict', '', 'C', '0', '1', 'system:dict:view', 'fa fa-bookmark-o', 'admin', '2021-04-01 09:40:57', '', NULL, '字典管理菜单');
-INSERT INTO `sys_menu` VALUES (106, '参数设置', 1, 7, '/system/config', '', 'C', '0', '1', 'system:config:view', 'fa fa-sun-o', 'admin', '2021-04-01 09:40:57', '', NULL, '参数设置菜单');
-INSERT INTO `sys_menu` VALUES (107, '通知公告', 1, 8, '/system/notice', '', 'C', '0', '1', 'system:notice:view', 'fa fa-bullhorn', 'admin', '2021-04-01 09:40:57', '', NULL, '通知公告菜单');
+INSERT INTO `sys_menu` VALUES (106, '参数设置', 1, 7, '/system/config', 'menuItem', 'C', '1', '1', 'system:config:view', 'fa fa-sun-o', 'admin', '2021-04-01 09:40:57', 'admin', '2021-04-12 10:54:06', '参数设置菜单');
+INSERT INTO `sys_menu` VALUES (107, '通知公告', 1, 8, '/system/notice', 'menuItem', 'C', '1', '1', 'system:notice:view', 'fa fa-bullhorn', 'admin', '2021-04-01 09:40:57', 'admin', '2021-04-12 10:54:22', '通知公告菜单');
 INSERT INTO `sys_menu` VALUES (108, '日志管理', 1, 9, '#', '', 'M', '0', '1', '', 'fa fa-pencil-square-o', 'admin', '2021-04-01 09:40:57', '', NULL, '日志管理菜单');
 INSERT INTO `sys_menu` VALUES (109, '在线用户', 2, 1, '/monitor/online', '', 'C', '0', '1', 'monitor:online:view', 'fa fa-user-circle', 'admin', '2021-04-01 09:40:57', '', NULL, '在线用户菜单');
 INSERT INTO `sys_menu` VALUES (110, '定时任务', 2, 2, '/monitor/job', '', 'C', '0', '1', 'monitor:job:view', 'fa fa-tasks', 'admin', '2021-04-01 09:40:57', '', NULL, '定时任务菜单');
@@ -908,9 +1079,19 @@ INSERT INTO `sys_menu` VALUES (2011, '图书入库导出', 2009, 1, '#', 'menuIt
 INSERT INTO `sys_menu` VALUES (2012, '图书入库新增', 2009, 2, '#', 'menuItem', 'F', '0', '1', 'system:instance:add', '#', 'admin', '2021-04-06 14:51:34', '', NULL, '');
 INSERT INTO `sys_menu` VALUES (2013, '图书入库修改', 2009, 3, '#', 'menuItem', 'F', '0', '1', 'system:instance:edit', '#', 'admin', '2021-04-06 14:52:05', '', NULL, '');
 INSERT INTO `sys_menu` VALUES (2014, '图书入库删除', 2009, 4, '#', 'menuItem', 'F', '0', '1', 'system:instance:remove', '#', 'admin', '2021-04-06 14:52:35', '', NULL, '');
-INSERT INTO `sys_menu` VALUES (2016, '图书入库审批', 2008, 1, '/system/instancedeal', 'menuItem', 'C', '0', '0', 'system:instance:view', '#', 'admin', '2021-04-06 15:45:29', 'admin', '2021-04-09 13:32:16', '');
+INSERT INTO `sys_menu` VALUES (2016, '图书入库审批', 2008, 1, '/system/instancedeal', 'menuItem', 'C', '0', '0', 'system:instancedeal:view', '#', 'admin', '2021-04-06 15:45:29', 'admin', '2021-04-12 11:03:44', '');
 INSERT INTO `sys_menu` VALUES (2017, '仓库管理', 0, 2, '#', 'menuItem', 'M', '0', '1', NULL, 'fa fa-institution', 'admin', '2021-04-09 13:30:28', '', NULL, '');
 INSERT INTO `sys_menu` VALUES (2018, '仓库管理', 2017, 1, '/system/house', 'menuItem', 'C', '0', '1', 'system:house:view', 'fa fa-bank', 'admin', '2021-04-09 13:31:28', '', NULL, '');
+INSERT INTO `sys_menu` VALUES (2019, '仓库-书籍基本信息', 2017, 1, '/system/housebase', 'menuItem', 'C', '1', '1', 'system:house:views', 'fa fa-american-sign-language-interpreting', 'admin', '2021-04-10 16:06:30', 'admin', '2021-04-12 11:31:30', '');
+INSERT INTO `sys_menu` VALUES (2020, '图书入库申请查询', 2016, 0, '#', 'menuItem', 'F', '0', '1', 'system:instancedeal:list', '#', 'admin', '2021-04-12 11:00:40', '', NULL, '');
+INSERT INTO `sys_menu` VALUES (2021, '图书入库审批删除', 2016, 1, '#', 'menuItem', 'F', '0', '1', 'system:instancedeal:remove', '#', 'admin', '2021-04-12 11:01:27', '', NULL, '');
+INSERT INTO `sys_menu` VALUES (2022, '图书入库审批-审批', 2016, 2, '#', 'menuItem', 'F', '0', '1', 'system:instancedeal:edit', '#', 'admin', '2021-04-12 11:02:03', '', NULL, '');
+INSERT INTO `sys_menu` VALUES (2023, '仓库管理-查询', 2018, 0, '#', 'menuItem', 'F', '0', '1', 'system:house:list', '#', 'admin', '2021-04-12 11:15:13', '', NULL, '');
+INSERT INTO `sys_menu` VALUES (2024, '仓库管理-导出', 2018, 1, '#', 'menuItem', 'F', '0', '1', 'system:house:export', '#', 'admin', '2021-04-12 11:15:58', '', NULL, '');
+INSERT INTO `sys_menu` VALUES (2025, '仓库管理-新增', 2018, 1, '#', 'menuItem', 'F', '0', '1', 'system:house:add', '#', 'admin', '2021-04-12 11:16:31', '', NULL, '');
+INSERT INTO `sys_menu` VALUES (2026, '仓库管理-删除', 2018, 3, '#', 'menuItem', 'F', '0', '1', 'system:house:remove', '#', 'admin', '2021-04-12 11:17:03', '', NULL, '');
+INSERT INTO `sys_menu` VALUES (2027, '仓库管理修改', 2018, 4, '#', 'menuItem', 'F', '0', '1', 'system:house:edit', '#', 'admin', '2021-04-12 11:17:29', 'admin', '2021-04-12 11:19:43', '');
+INSERT INTO `sys_menu` VALUES (2028, '仓库-书籍基本信息', 2019, 0, '#', 'menuItem', 'F', '0', '1', 'system:house:lists', '#', 'admin', '2021-04-12 11:22:12', '', NULL, '');
 
 -- ----------------------------
 -- Table structure for sys_notice
@@ -956,7 +1137,7 @@ CREATE TABLE `sys_oper_log`  (
   `error_msg` varchar(2000) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '' COMMENT '错误消息',
   `oper_time` datetime NULL DEFAULT NULL COMMENT '操作时间',
   PRIMARY KEY (`oper_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 309 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '操作日志记录' ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 385 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '操作日志记录' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of sys_oper_log
@@ -1170,6 +1351,82 @@ INSERT INTO `sys_oper_log` VALUES (305, '入库申请', 1, 'com.ruoyi.web.contro
 INSERT INTO `sys_oper_log` VALUES (306, '入库申请', 1, 'com.ruoyi.web.controller.system.SysInstanceController.addSave()', 'POST', 1, 'admin', '研发', '/system/instance/add', '127.0.0.1', '内网IP', '{\"house\":[\"1\"],\"bookId\":[\"11\"],\"bookName\":[\"11\"],\"bookPublish\":[\"11\"],\"bookAuthor\":[\"11\"],\"bookPrice\":[\"11\"],\"createDate\":[\"2021-04-01\"],\"houseFlag\":[\"1\"]}', '{\r\n  \"msg\" : \"图书编号已存在\",\r\n  \"code\" : 500\r\n}', 0, NULL, '2021-04-10 07:58:33');
 INSERT INTO `sys_oper_log` VALUES (307, '入库申请', 1, 'com.ruoyi.web.controller.system.SysInstanceController.addSave()', 'POST', 1, 'admin', '研发', '/system/instance/add', '127.0.0.1', '内网IP', '{\"house\":[\"1\"],\"bookId\":[\"测试1\"],\"bookName\":[\"1\"],\"bookPublish\":[\"11\"],\"bookAuthor\":[\"11\"],\"bookPrice\":[\"11\"],\"createDate\":[\"2021-04-01\"],\"houseFlag\":[\"1\"]}', '{\r\n  \"msg\" : \"操作成功\",\r\n  \"code\" : 0,\r\n  \"data\" : 1\r\n}', 0, NULL, '2021-04-10 07:58:48');
 INSERT INTO `sys_oper_log` VALUES (308, '入库申请', 1, 'com.ruoyi.web.controller.system.SysInstanceController.addSave()', 'POST', 1, 'admin', '研发', '/system/instance/add', '127.0.0.1', '内网IP', '{\"house\":[\"1\"],\"bookId\":[\"测试1\"],\"bookName\":[\"1111\"],\"bookPublish\":[\"1\"],\"bookAuthor\":[\"11\"],\"bookPrice\":[\"1\"],\"createDate\":[\"2021-04-01\"],\"houseFlag\":[\"1\"]}', '{\r\n  \"msg\" : \"图书编号已存在\",\r\n  \"code\" : 500\r\n}', 0, NULL, '2021-04-10 07:59:16');
+INSERT INTO `sys_oper_log` VALUES (309, '仓库', 1, 'com.ruoyi.web.controller.system.SysHouseController.addSave()', 'POST', 1, 'admin', '研发', '/system/house/add', '127.0.0.1', '内网IP', '{\"houseName\":[\"测试\"],\"houseNumber\":[\"100\"],\"houseBooks\":[\"0\"]}', '{\r\n  \"msg\" : \"操作成功\",\r\n  \"code\" : 0,\r\n  \"data\" : 1\r\n}', 0, NULL, '2021-04-10 08:23:39');
+INSERT INTO `sys_oper_log` VALUES (310, '入库申请', 1, 'com.ruoyi.web.controller.system.SysInstanceController.addSave()', 'POST', 1, 'admin', '研发', '/system/instance/add', '127.0.0.1', '内网IP', '{\"house\":[\"3\"],\"bookId\":[\"测试1\"],\"bookName\":[\"测试啊\"],\"bookPublish\":[\"啊\"],\"bookAuthor\":[\"测试\"],\"bookPrice\":[\"1\"],\"createDate\":[\"2021-04-01\"],\"houseFlag\":[\"1\"]}', '{\r\n  \"msg\" : \"操作成功\",\r\n  \"code\" : 0,\r\n  \"data\" : 1\r\n}', 0, NULL, '2021-04-10 08:24:17');
+INSERT INTO `sys_oper_log` VALUES (311, '入库申请', 2, 'com.ruoyi.web.controller.system.SysInstanceDealController.editSave()', 'POST', 1, 'admin', '研发', '/system/instancedeal/edit', '127.0.0.1', '内网IP', '{\"instanceId\":[\"23\"],\"businessId\":[\"41\"],\"bookPublishDate\":[\"\"],\"bookId\":[\"41\"],\"bookName\":[\"测试啊\"],\"bookPublish\":[\"啊\"],\"bookAuthor\":[\"测试\"],\"bookPrice\":[\"1\"],\"instanceStatus\":[\"1\"]}', '{\r\n  \"msg\" : \"操作成功\",\r\n  \"code\" : 0,\r\n  \"data\" : 1\r\n}', 0, NULL, '2021-04-10 08:24:23');
+INSERT INTO `sys_oper_log` VALUES (312, '入库申请', 1, 'com.ruoyi.web.controller.system.SysInstanceController.addSave()', 'POST', 1, 'admin', '研发', '/system/instance/add', '127.0.0.1', '内网IP', '{\"house\":[\"3\"],\"bookId\":[\"1\"],\"bookName\":[\"1111\"],\"bookPublish\":[\"11111\"],\"bookAuthor\":[\"11\"],\"bookPrice\":[\"11\"],\"createDate\":[\"\"],\"houseFlag\":[\"1\"]}', '{\r\n  \"msg\" : \"操作成功\",\r\n  \"code\" : 0,\r\n  \"data\" : 1\r\n}', 0, NULL, '2021-04-10 08:26:55');
+INSERT INTO `sys_oper_log` VALUES (313, '入库申请', 2, 'com.ruoyi.web.controller.system.SysInstanceDealController.editSave()', 'POST', 1, 'admin', '研发', '/system/instancedeal/edit', '127.0.0.1', '内网IP', '{\"instanceId\":[\"24\"],\"businessId\":[\"42\"],\"bookPublishDate\":[\"\"],\"bookId\":[\"42\"],\"bookName\":[\"1111\"],\"bookPublish\":[\"11111\"],\"bookAuthor\":[\"11\"],\"bookPrice\":[\"11\"],\"instanceStatus\":[\"1\"]}', '{\r\n  \"msg\" : \"操作成功\",\r\n  \"code\" : 0,\r\n  \"data\" : 1\r\n}', 0, NULL, '2021-04-10 08:27:12');
+INSERT INTO `sys_oper_log` VALUES (314, '入库申请', 1, 'com.ruoyi.web.controller.system.SysInstanceController.addSave()', 'POST', 1, 'admin', '研发', '/system/instance/add', '127.0.0.1', '内网IP', '{\"house\":[\"3\"],\"bookId\":[\"测试1\"],\"bookName\":[\"44\"],\"bookPublish\":[\"啊啊\"],\"bookAuthor\":[\"11\"],\"bookPrice\":[\"\"],\"createDate\":[\"\"],\"houseFlag\":[\"1\"]}', '{\r\n  \"msg\" : \"操作成功\",\r\n  \"code\" : 0,\r\n  \"data\" : 1\r\n}', 0, NULL, '2021-04-10 08:29:56');
+INSERT INTO `sys_oper_log` VALUES (315, '入库申请', 1, 'com.ruoyi.web.controller.system.SysInstanceController.addSave()', 'POST', 1, 'admin', '研发', '/system/instance/add', '127.0.0.1', '内网IP', '{\"house\":[\"3\"],\"bookId\":[\"11\"],\"bookName\":[\"111\"],\"bookPublish\":[\"11\"],\"bookAuthor\":[\"11\"],\"bookPrice\":[\"11\"],\"createDate\":[\"\"],\"houseFlag\":[\"1\"]}', '{\r\n  \"msg\" : \"操作成功\",\r\n  \"code\" : 0,\r\n  \"data\" : 1\r\n}', 0, NULL, '2021-04-10 08:30:24');
+INSERT INTO `sys_oper_log` VALUES (316, '入库申请', 2, 'com.ruoyi.web.controller.system.SysInstanceDealController.editSave()', 'POST', 1, 'admin', '研发', '/system/instancedeal/edit', '127.0.0.1', '内网IP', '{\"instanceId\":[\"25\"],\"businessId\":[\"43\"],\"bookPublishDate\":[\"\"],\"bookId\":[\"43\"],\"bookName\":[\"44\"],\"bookPublish\":[\"啊啊\"],\"bookAuthor\":[\"11\"],\"bookPrice\":[\"\"],\"instanceStatus\":[\"1\"]}', '{\r\n  \"msg\" : \"操作成功\",\r\n  \"code\" : 0,\r\n  \"data\" : 1\r\n}', 0, NULL, '2021-04-10 08:32:11');
+INSERT INTO `sys_oper_log` VALUES (317, '入库申请', 2, 'com.ruoyi.web.controller.system.SysInstanceDealController.editSave()', 'POST', 1, 'admin', '研发', '/system/instancedeal/edit', '127.0.0.1', '内网IP', '{\"instanceId\":[\"26\"],\"businessId\":[\"44\"],\"bookPublishDate\":[\"\"],\"bookId\":[\"11\"],\"bookName\":[\"111\"],\"bookPublish\":[\"11\"],\"bookAuthor\":[\"11\"],\"bookPrice\":[\"11\"],\"instanceStatus\":[\"1\"]}', '{\r\n  \"msg\" : \"操作成功\",\r\n  \"code\" : 0,\r\n  \"data\" : 1\r\n}', 0, NULL, '2021-04-10 08:36:26');
+INSERT INTO `sys_oper_log` VALUES (318, '菜单管理', 1, 'com.ruoyi.web.controller.system.SysMenuController.addSave()', 'POST', 1, 'admin', '研发', '/system/menu/add', '127.0.0.1', '内网IP', '{\"parentId\":[\"2017\"],\"menuType\":[\"C\"],\"menuName\":[\"仓库-书籍基本信息\"],\"url\":[\"/system/housebase\"],\"target\":[\"menuItem\"],\"perms\":[\"system:house:views\"],\"orderNum\":[\"1\"],\"icon\":[\"fa fa-american-sign-language-interpreting\"],\"visible\":[\"1\"],\"isRefresh\":[\"1\"]}', '{\r\n  \"msg\" : \"操作成功\",\r\n  \"code\" : 0\r\n}', 0, NULL, '2021-04-10 16:06:30');
+INSERT INTO `sys_oper_log` VALUES (319, '个人信息', 2, 'com.ruoyi.web.controller.system.SysProfileController.updateAvatar()', 'POST', 1, 'admin', '研发', '/system/user/profile/updateAvatar', '127.0.0.1', '内网IP', NULL, '{\r\n  \"msg\" : \"操作成功\",\r\n  \"code\" : 0\r\n}', 0, NULL, '2021-04-10 18:40:55');
+INSERT INTO `sys_oper_log` VALUES (320, '个人信息', 2, 'com.ruoyi.web.controller.system.SysProfileController.update()', 'POST', 1, 'admin', '研发', '/system/user/profile/update', '127.0.0.1', '内网IP', '{\"id\":[\"\"],\"userName\":[\"茶叶\"],\"phonenumber\":[\"15888888888\"],\"email\":[\"ry@163.com\"],\"sex\":[\"1\"]}', '{\r\n  \"msg\" : \"操作成功\",\r\n  \"code\" : 0\r\n}', 0, NULL, '2021-04-10 18:41:25');
+INSERT INTO `sys_oper_log` VALUES (321, '菜单管理', 2, 'com.ruoyi.web.controller.system.SysMenuController.editSave()', 'POST', 1, 'admin', '研发', '/system/menu/edit', '127.0.0.1', '内网IP', '{\"menuId\":[\"103\"],\"parentId\":[\"1\"],\"menuType\":[\"C\"],\"menuName\":[\"部门管理\"],\"url\":[\"/system/dept\"],\"target\":[\"menuItem\"],\"perms\":[\"system:dept:view\"],\"orderNum\":[\"4\"],\"icon\":[\"fa fa-outdent\"],\"visible\":[\"1\"],\"isRefresh\":[\"1\"]}', '{\r\n  \"msg\" : \"操作成功\",\r\n  \"code\" : 0\r\n}', 0, NULL, '2021-04-12 10:53:37');
+INSERT INTO `sys_oper_log` VALUES (322, '菜单管理', 2, 'com.ruoyi.web.controller.system.SysMenuController.editSave()', 'POST', 1, 'admin', '研发', '/system/menu/edit', '127.0.0.1', '内网IP', '{\"menuId\":[\"104\"],\"parentId\":[\"1\"],\"menuType\":[\"C\"],\"menuName\":[\"岗位管理\"],\"url\":[\"/system/post\"],\"target\":[\"menuItem\"],\"perms\":[\"system:post:view\"],\"orderNum\":[\"5\"],\"icon\":[\"fa fa-address-card-o\"],\"visible\":[\"1\"],\"isRefresh\":[\"1\"]}', '{\r\n  \"msg\" : \"操作成功\",\r\n  \"code\" : 0\r\n}', 0, NULL, '2021-04-12 10:53:51');
+INSERT INTO `sys_oper_log` VALUES (323, '菜单管理', 2, 'com.ruoyi.web.controller.system.SysMenuController.editSave()', 'POST', 1, 'admin', '研发', '/system/menu/edit', '127.0.0.1', '内网IP', '{\"menuId\":[\"106\"],\"parentId\":[\"1\"],\"menuType\":[\"C\"],\"menuName\":[\"参数设置\"],\"url\":[\"/system/config\"],\"target\":[\"menuItem\"],\"perms\":[\"system:config:view\"],\"orderNum\":[\"7\"],\"icon\":[\"fa fa-sun-o\"],\"visible\":[\"1\"],\"isRefresh\":[\"1\"]}', '{\r\n  \"msg\" : \"操作成功\",\r\n  \"code\" : 0\r\n}', 0, NULL, '2021-04-12 10:54:06');
+INSERT INTO `sys_oper_log` VALUES (324, '菜单管理', 2, 'com.ruoyi.web.controller.system.SysMenuController.editSave()', 'POST', 1, 'admin', '研发', '/system/menu/edit', '127.0.0.1', '内网IP', '{\"menuId\":[\"107\"],\"parentId\":[\"1\"],\"menuType\":[\"C\"],\"menuName\":[\"通知公告\"],\"url\":[\"/system/notice\"],\"target\":[\"menuItem\"],\"perms\":[\"system:notice:view\"],\"orderNum\":[\"8\"],\"icon\":[\"fa fa-bullhorn\"],\"visible\":[\"1\"],\"isRefresh\":[\"1\"]}', '{\r\n  \"msg\" : \"操作成功\",\r\n  \"code\" : 0\r\n}', 0, NULL, '2021-04-12 10:54:22');
+INSERT INTO `sys_oper_log` VALUES (325, '菜单管理', 2, 'com.ruoyi.web.controller.system.SysMenuController.editSave()', 'POST', 1, 'admin', '研发', '/system/menu/edit', '127.0.0.1', '内网IP', '{\"menuId\":[\"4\"],\"parentId\":[\"0\"],\"menuType\":[\"C\"],\"menuName\":[\"---\"],\"url\":[\"http://ruoyi.vip\"],\"target\":[\"menuBlank\"],\"perms\":[\"\"],\"orderNum\":[\"4\"],\"icon\":[\"fa fa-location-arrow\"],\"visible\":[\"1\"],\"isRefresh\":[\"1\"]}', '{\r\n  \"msg\" : \"操作成功\",\r\n  \"code\" : 0\r\n}', 0, NULL, '2021-04-12 10:54:35');
+INSERT INTO `sys_oper_log` VALUES (326, '菜单管理', 2, 'com.ruoyi.web.controller.system.SysMenuController.editSave()', 'POST', 1, 'admin', '研发', '/system/menu/edit', '127.0.0.1', '内网IP', '{\"menuId\":[\"3\"],\"parentId\":[\"0\"],\"menuType\":[\"M\"],\"menuName\":[\"系统工具\"],\"url\":[\"#\"],\"target\":[\"menuItem\"],\"perms\":[\"\"],\"orderNum\":[\"3\"],\"icon\":[\"fa fa-bars\"],\"visible\":[\"1\"],\"isRefresh\":[\"1\"]}', '{\r\n  \"msg\" : \"操作成功\",\r\n  \"code\" : 0\r\n}', 0, NULL, '2021-04-12 10:54:54');
+INSERT INTO `sys_oper_log` VALUES (327, '角色管理', 1, 'com.ruoyi.web.controller.system.SysRoleController.addSave()', 'POST', 1, 'admin', '研发', '/system/role/add', '127.0.0.1', '内网IP', '{\"roleName\":[\"仓库审批员\"],\"roleKey\":[\"deal\"],\"roleSort\":[\"3\"],\"status\":[\"0\"],\"remark\":[\"\"],\"menuIds\":[\"2001,2002,2003,2005,2004,2006,2007,2008,2016,2017,2018,2019\"]}', '{\r\n  \"msg\" : \"操作成功\",\r\n  \"code\" : 0\r\n}', 0, NULL, '2021-04-12 10:57:19');
+INSERT INTO `sys_oper_log` VALUES (328, '用户管理', 1, 'com.ruoyi.web.controller.system.SysUserController.addSave()', 'POST', 1, 'admin', '研发', '/system/user/add', '127.0.0.1', '内网IP', '{\"deptId\":[\"201\"],\"userName\":[\"刘审批\"],\"deptName\":[\"入库审批员\"],\"phonenumber\":[\"\"],\"email\":[\"\"],\"loginName\":[\"刘审批\"],\"sex\":[\"0\"],\"remark\":[\"\"],\"status\":[\"0\"],\"roleIds\":[\"\"],\"postIds\":[\"\"]}', '{\r\n  \"msg\" : \"操作成功\",\r\n  \"code\" : 0\r\n}', 0, NULL, '2021-04-12 10:57:52');
+INSERT INTO `sys_oper_log` VALUES (329, '用户管理', 2, 'com.ruoyi.web.controller.system.SysUserController.editSave()', 'POST', 1, 'admin', '研发', '/system/user/edit', '127.0.0.1', '内网IP', '{\"userId\":[\"101\"],\"deptId\":[\"201\"],\"userName\":[\"刘审批\"],\"dept.deptName\":[\"入库审批员\"],\"phonenumber\":[\"\"],\"email\":[\"\"],\"loginName\":[\"刘审批\"],\"sex\":[\"0\"],\"role\":[\"101\"],\"remark\":[\"\"],\"status\":[\"0\"],\"roleIds\":[\"101\"],\"postIds\":[\"\"]}', '{\r\n  \"msg\" : \"操作成功\",\r\n  \"code\" : 0\r\n}', 0, NULL, '2021-04-12 10:58:33');
+INSERT INTO `sys_oper_log` VALUES (330, '菜单管理', 1, 'com.ruoyi.web.controller.system.SysMenuController.addSave()', 'POST', 1, 'admin', '研发', '/system/menu/add', '127.0.0.1', '内网IP', '{\"parentId\":[\"2016\"],\"menuType\":[\"F\"],\"menuName\":[\"图书入库申请查询\"],\"url\":[\"\"],\"target\":[\"menuItem\"],\"perms\":[\"system:instancedeal:list\"],\"orderNum\":[\"0\"],\"icon\":[\"\"],\"visible\":[\"0\"],\"isRefresh\":[\"1\"]}', '{\r\n  \"msg\" : \"操作成功\",\r\n  \"code\" : 0\r\n}', 0, NULL, '2021-04-12 11:00:40');
+INSERT INTO `sys_oper_log` VALUES (331, '菜单管理', 1, 'com.ruoyi.web.controller.system.SysMenuController.addSave()', 'POST', 1, 'admin', '研发', '/system/menu/add', '127.0.0.1', '内网IP', '{\"parentId\":[\"2016\"],\"menuType\":[\"F\"],\"menuName\":[\"图书入库审批删除\"],\"url\":[\"\"],\"target\":[\"menuItem\"],\"perms\":[\"system:instancedeal:remove\"],\"orderNum\":[\"1\"],\"icon\":[\"\"],\"visible\":[\"0\"],\"isRefresh\":[\"1\"]}', '{\r\n  \"msg\" : \"操作成功\",\r\n  \"code\" : 0\r\n}', 0, NULL, '2021-04-12 11:01:27');
+INSERT INTO `sys_oper_log` VALUES (332, '菜单管理', 1, 'com.ruoyi.web.controller.system.SysMenuController.addSave()', 'POST', 1, 'admin', '研发', '/system/menu/add', '127.0.0.1', '内网IP', '{\"parentId\":[\"2016\"],\"menuType\":[\"F\"],\"menuName\":[\"图书入库审批-审批\"],\"url\":[\"\"],\"target\":[\"menuItem\"],\"perms\":[\"system:instancedeal:edit\"],\"orderNum\":[\"2\"],\"icon\":[\"\"],\"visible\":[\"0\"],\"isRefresh\":[\"1\"]}', '{\r\n  \"msg\" : \"操作成功\",\r\n  \"code\" : 0\r\n}', 0, NULL, '2021-04-12 11:02:04');
+INSERT INTO `sys_oper_log` VALUES (333, '菜单管理', 2, 'com.ruoyi.web.controller.system.SysMenuController.editSave()', 'POST', 1, 'admin', '研发', '/system/menu/edit', '127.0.0.1', '内网IP', '{\"menuId\":[\"2016\"],\"parentId\":[\"2008\"],\"menuType\":[\"C\"],\"menuName\":[\"图书入库审批\"],\"url\":[\"/system/instancedeal\"],\"target\":[\"menuItem\"],\"perms\":[\"system:instancedeal:view\"],\"orderNum\":[\"1\"],\"icon\":[\"#\"],\"visible\":[\"0\"],\"isRefresh\":[\"0\"]}', '{\r\n  \"msg\" : \"操作成功\",\r\n  \"code\" : 0\r\n}', 0, NULL, '2021-04-12 11:03:44');
+INSERT INTO `sys_oper_log` VALUES (334, '角色管理', 2, 'com.ruoyi.web.controller.system.SysRoleController.editSave()', 'POST', 1, 'admin', '研发', '/system/role/edit', '127.0.0.1', '内网IP', '{\"roleId\":[\"101\"],\"roleName\":[\"仓库审批员\"],\"roleKey\":[\"deal\"],\"roleSort\":[\"3\"],\"status\":[\"0\"],\"remark\":[\"\"],\"menuIds\":[\"2001,2002,2003,2005,2004,2006,2007,2008,2016,2020,2021,2022,2017,2018,2019\"]}', '{\r\n  \"msg\" : \"操作成功\",\r\n  \"code\" : 0\r\n}', 0, NULL, '2021-04-12 11:04:45');
+INSERT INTO `sys_oper_log` VALUES (335, '角色管理', 2, 'com.ruoyi.web.controller.system.SysRoleController.editSave()', 'POST', 1, 'admin', '研发', '/system/role/edit', '127.0.0.1', '内网IP', '{\"roleId\":[\"101\"],\"roleName\":[\"仓库审批员\"],\"roleKey\":[\"deal\"],\"roleSort\":[\"3\"],\"status\":[\"0\"],\"remark\":[\"\"],\"menuIds\":[\"2001,2002,2003,2005,2004,2006,2007,2017,2018,2019\"]}', '{\r\n  \"msg\" : \"操作成功\",\r\n  \"code\" : 0\r\n}', 0, NULL, '2021-04-12 11:06:58');
+INSERT INTO `sys_oper_log` VALUES (336, '角色管理', 2, 'com.ruoyi.web.controller.system.SysRoleController.editSave()', 'POST', 1, 'admin', '研发', '/system/role/edit', '127.0.0.1', '内网IP', '{\"roleId\":[\"101\"],\"roleName\":[\"仓库审批员\"],\"roleKey\":[\"deal\"],\"roleSort\":[\"3\"],\"status\":[\"0\"],\"remark\":[\"\"],\"menuIds\":[\"2001,2002,2003,2005,2004,2006,2007,2008,2016,2020,2021,2022,2017,2018,2019\"]}', '{\r\n  \"msg\" : \"操作成功\",\r\n  \"code\" : 0\r\n}', 0, NULL, '2021-04-12 11:07:08');
+INSERT INTO `sys_oper_log` VALUES (337, '菜单管理', 1, 'com.ruoyi.web.controller.system.SysMenuController.addSave()', 'POST', 1, 'admin', '研发', '/system/menu/add', '127.0.0.1', '内网IP', '{\"parentId\":[\"2018\"],\"menuType\":[\"F\"],\"menuName\":[\"仓库管理-查询\"],\"url\":[\"\"],\"target\":[\"menuItem\"],\"perms\":[\"system:house:list\"],\"orderNum\":[\"0\"],\"icon\":[\"\"],\"visible\":[\"0\"],\"isRefresh\":[\"1\"]}', '{\r\n  \"msg\" : \"操作成功\",\r\n  \"code\" : 0\r\n}', 0, NULL, '2021-04-12 11:15:13');
+INSERT INTO `sys_oper_log` VALUES (338, '菜单管理', 1, 'com.ruoyi.web.controller.system.SysMenuController.addSave()', 'POST', 1, 'admin', '研发', '/system/menu/add', '127.0.0.1', '内网IP', '{\"parentId\":[\"2018\"],\"menuType\":[\"F\"],\"menuName\":[\"仓库管理-导出\"],\"url\":[\"\"],\"target\":[\"menuItem\"],\"perms\":[\"system:house:export\"],\"orderNum\":[\"1\"],\"icon\":[\"\"],\"visible\":[\"0\"],\"isRefresh\":[\"1\"]}', '{\r\n  \"msg\" : \"操作成功\",\r\n  \"code\" : 0\r\n}', 0, NULL, '2021-04-12 11:15:58');
+INSERT INTO `sys_oper_log` VALUES (339, '菜单管理', 1, 'com.ruoyi.web.controller.system.SysMenuController.addSave()', 'POST', 1, 'admin', '研发', '/system/menu/add', '127.0.0.1', '内网IP', '{\"parentId\":[\"2018\"],\"menuType\":[\"F\"],\"menuName\":[\"仓库管理-新增\"],\"url\":[\"\"],\"target\":[\"menuItem\"],\"perms\":[\"system:house:add\"],\"orderNum\":[\"1\"],\"icon\":[\"\"],\"visible\":[\"0\"],\"isRefresh\":[\"1\"]}', '{\r\n  \"msg\" : \"操作成功\",\r\n  \"code\" : 0\r\n}', 0, NULL, '2021-04-12 11:16:31');
+INSERT INTO `sys_oper_log` VALUES (340, '菜单管理', 1, 'com.ruoyi.web.controller.system.SysMenuController.addSave()', 'POST', 1, 'admin', '研发', '/system/menu/add', '127.0.0.1', '内网IP', '{\"parentId\":[\"2018\"],\"menuType\":[\"F\"],\"menuName\":[\"仓库管理-删除\"],\"url\":[\"\"],\"target\":[\"menuItem\"],\"perms\":[\"system:house:remove\"],\"orderNum\":[\"3\"],\"icon\":[\"\"],\"visible\":[\"0\"],\"isRefresh\":[\"1\"]}', '{\r\n  \"msg\" : \"操作成功\",\r\n  \"code\" : 0\r\n}', 0, NULL, '2021-04-12 11:17:03');
+INSERT INTO `sys_oper_log` VALUES (341, '菜单管理', 1, 'com.ruoyi.web.controller.system.SysMenuController.addSave()', 'POST', 1, 'admin', '研发', '/system/menu/add', '127.0.0.1', '内网IP', '{\"parentId\":[\"2017\"],\"menuType\":[\"F\"],\"menuName\":[\"仓库管理修改\"],\"url\":[\"\"],\"target\":[\"menuItem\"],\"perms\":[\"system:house:edit\"],\"orderNum\":[\"4\"],\"icon\":[\"\"],\"visible\":[\"0\"],\"isRefresh\":[\"1\"]}', '{\r\n  \"msg\" : \"操作成功\",\r\n  \"code\" : 0\r\n}', 0, NULL, '2021-04-12 11:17:30');
+INSERT INTO `sys_oper_log` VALUES (342, '菜单管理', 2, 'com.ruoyi.web.controller.system.SysMenuController.editSave()', 'POST', 1, 'admin', '研发', '/system/menu/edit', '127.0.0.1', '内网IP', '{\"menuId\":[\"2027\"],\"parentId\":[\"2018\"],\"menuType\":[\"F\"],\"menuName\":[\"仓库管理修改\"],\"url\":[\"#\"],\"target\":[\"menuItem\"],\"perms\":[\"system:house:edit\"],\"orderNum\":[\"4\"],\"icon\":[\"#\"],\"visible\":[\"0\"],\"isRefresh\":[\"1\"]}', '{\r\n  \"msg\" : \"操作成功\",\r\n  \"code\" : 0\r\n}', 0, NULL, '2021-04-12 11:19:43');
+INSERT INTO `sys_oper_log` VALUES (343, '角色管理', 2, 'com.ruoyi.web.controller.system.SysRoleController.editSave()', 'POST', 1, 'admin', '研发', '/system/role/edit', '127.0.0.1', '内网IP', '{\"roleId\":[\"101\"],\"roleName\":[\"仓库审批员\"],\"roleKey\":[\"deal\"],\"roleSort\":[\"3\"],\"status\":[\"0\"],\"remark\":[\"\"],\"menuIds\":[\"2001,2002,2003,2005,2004,2006,2007,2008,2016,2020,2021,2022,2017,2018,2023,2024,2025,2026,2027\"]}', '{\r\n  \"msg\" : \"操作成功\",\r\n  \"code\" : 0\r\n}', 0, NULL, '2021-04-12 11:20:10');
+INSERT INTO `sys_oper_log` VALUES (344, '菜单管理', 1, 'com.ruoyi.web.controller.system.SysMenuController.addSave()', 'POST', 1, 'admin', '研发', '/system/menu/add', '127.0.0.1', '内网IP', '{\"parentId\":[\"2019\"],\"menuType\":[\"F\"],\"menuName\":[\"仓库-书籍基本信息\"],\"url\":[\"\"],\"target\":[\"menuItem\"],\"perms\":[\"system:house:lists\"],\"orderNum\":[\"0\"],\"icon\":[\"\"],\"visible\":[\"0\"],\"isRefresh\":[\"1\"]}', '{\r\n  \"msg\" : \"操作成功\",\r\n  \"code\" : 0\r\n}', 0, NULL, '2021-04-12 11:22:12');
+INSERT INTO `sys_oper_log` VALUES (345, '角色管理', 2, 'com.ruoyi.web.controller.system.SysRoleController.editSave()', 'POST', 1, 'admin', '研发', '/system/role/edit', '127.0.0.1', '内网IP', '{\"roleId\":[\"101\"],\"roleName\":[\"仓库审批员\"],\"roleKey\":[\"deal\"],\"roleSort\":[\"3\"],\"status\":[\"0\"],\"remark\":[\"\"],\"menuIds\":[\"2001,2002,2003,2005,2004,2006,2007,2008,2016,2020,2021,2022,2017,2018,2023,2024,2025,2026,2027,2019,2028\"]}', '{\r\n  \"msg\" : \"操作成功\",\r\n  \"code\" : 0\r\n}', 0, NULL, '2021-04-12 11:22:31');
+INSERT INTO `sys_oper_log` VALUES (346, '菜单管理', 2, 'com.ruoyi.web.controller.system.SysMenuController.editSave()', 'POST', 1, 'admin', '研发', '/system/menu/edit', '127.0.0.1', '内网IP', '{\"menuId\":[\"2019\"],\"parentId\":[\"2018\"],\"menuType\":[\"F\"],\"menuName\":[\"仓库-书籍基本信息\"],\"url\":[\"/system/housebase\"],\"target\":[\"menuItem\"],\"perms\":[\"system:house:views\"],\"orderNum\":[\"1\"],\"icon\":[\"fa fa-american-sign-language-interpreting\"],\"visible\":[\"1\"],\"isRefresh\":[\"1\"]}', '{\r\n  \"msg\" : \"操作成功\",\r\n  \"code\" : 0\r\n}', 0, NULL, '2021-04-12 11:30:52');
+INSERT INTO `sys_oper_log` VALUES (347, '菜单管理', 2, 'com.ruoyi.web.controller.system.SysMenuController.editSave()', 'POST', 1, 'admin', '研发', '/system/menu/edit', '127.0.0.1', '内网IP', '{\"menuId\":[\"2019\"],\"parentId\":[\"2018\"],\"menuType\":[\"C\"],\"menuName\":[\"仓库-书籍基本信息\"],\"url\":[\"/system/housebase\"],\"target\":[\"menuItem\"],\"perms\":[\"system:house:views\"],\"orderNum\":[\"1\"],\"icon\":[\"fa fa-american-sign-language-interpreting\"],\"visible\":[\"1\"],\"isRefresh\":[\"1\"]}', '{\r\n  \"msg\" : \"操作成功\",\r\n  \"code\" : 0\r\n}', 0, NULL, '2021-04-12 11:31:13');
+INSERT INTO `sys_oper_log` VALUES (348, '菜单管理', 2, 'com.ruoyi.web.controller.system.SysMenuController.editSave()', 'POST', 1, 'admin', '研发', '/system/menu/edit', '127.0.0.1', '内网IP', '{\"menuId\":[\"2019\"],\"parentId\":[\"2017\"],\"menuType\":[\"C\"],\"menuName\":[\"仓库-书籍基本信息\"],\"url\":[\"/system/housebase\"],\"target\":[\"menuItem\"],\"perms\":[\"system:house:views\"],\"orderNum\":[\"1\"],\"icon\":[\"fa fa-american-sign-language-interpreting\"],\"visible\":[\"1\"],\"isRefresh\":[\"1\"]}', '{\r\n  \"msg\" : \"操作成功\",\r\n  \"code\" : 0\r\n}', 0, NULL, '2021-04-12 11:31:30');
+INSERT INTO `sys_oper_log` VALUES (349, '入库申请', 1, 'com.ruoyi.web.controller.system.SysInstanceController.addSave()', 'POST', 1, 'admin', '研发', '/system/instance/add', '127.0.0.1', '内网IP', '{\"house\":[\"3\"],\"bookId\":[\"测试1\"],\"bookName\":[\"测\"],\"bookPublish\":[\"测\"],\"bookAuthor\":[\"侧嗯嗯\"],\"bookPrice\":[\"111\"],\"createDate\":[\"\"],\"houseFlag\":[\"1\"]}', '{\r\n  \"msg\" : \"操作成功\",\r\n  \"code\" : 0,\r\n  \"data\" : 1\r\n}', 0, NULL, '2021-04-23 14:10:24');
+INSERT INTO `sys_oper_log` VALUES (350, '入库申请', 2, 'com.ruoyi.web.controller.system.SysInstanceDealController.editSave()', 'POST', 1, 'admin', '研发', '/system/instancedeal/edit', '127.0.0.1', '内网IP', '{\"instanceId\":[\"27\"],\"businessId\":[\"45\"],\"bookPublishDate\":[\"\"],\"bookId\":[\"测试1\"],\"bookName\":[\"测\"],\"bookPublish\":[\"测\"],\"bookAuthor\":[\"侧嗯嗯\"],\"bookPrice\":[\"111\"],\"instanceStatus\":[\"1\"]}', NULL, 1, 'For input string: \"测试1\"', '2021-04-23 14:10:53');
+INSERT INTO `sys_oper_log` VALUES (351, '入库申请', 2, 'com.ruoyi.web.controller.system.SysInstanceDealController.editSave()', 'POST', 1, 'admin', '研发', '/system/instancedeal/edit', '127.0.0.1', '内网IP', '{\"instanceId\":[\"27\"],\"businessId\":[\"45\"],\"bookPublishDate\":[\"\"],\"bookId\":[\"测试1\"],\"bookName\":[\"测\"],\"bookPublish\":[\"测\"],\"bookAuthor\":[\"侧嗯嗯\"],\"bookPrice\":[\"111\"],\"instanceStatus\":[\"1\"]}', NULL, 1, 'For input string: \"测试1\"', '2021-04-23 14:10:57');
+INSERT INTO `sys_oper_log` VALUES (352, '入库申请', 2, 'com.ruoyi.web.controller.system.SysInstanceDealController.editSave()', 'POST', 1, 'admin', '研发', '/system/instancedeal/edit', '127.0.0.1', '内网IP', '{\"instanceId\":[\"27\"],\"businessId\":[\"45\"],\"bookPublishDate\":[\"\"],\"bookId\":[\"测试1\"],\"bookName\":[\"测\"],\"bookPublish\":[\"测\"],\"bookAuthor\":[\"侧嗯嗯\"],\"bookPrice\":[\"111\"],\"instanceStatus\":[\"1\"]}', NULL, 1, 'For input string: \"测试1\"', '2021-04-23 14:10:59');
+INSERT INTO `sys_oper_log` VALUES (353, '入库申请', 2, 'com.ruoyi.web.controller.system.SysInstanceDealController.editSave()', 'POST', 1, 'admin', '研发', '/system/instancedeal/edit', '127.0.0.1', '内网IP', '{\"instanceId\":[\"27\"],\"businessId\":[\"45\"],\"bookPublishDate\":[\"\"],\"bookId\":[\"测试1\"],\"bookName\":[\"测\"],\"bookPublish\":[\"测\"],\"bookAuthor\":[\"侧嗯嗯\"],\"bookPrice\":[\"111\"],\"instanceStatus\":[\"1\"]}', NULL, 1, 'For input string: \"测试1\"', '2021-04-23 14:14:45');
+INSERT INTO `sys_oper_log` VALUES (354, '入库申请', 2, 'com.ruoyi.web.controller.system.SysInstanceDealController.editSave()', 'POST', 1, 'admin', '研发', '/system/instancedeal/edit', '127.0.0.1', '内网IP', '{\"instanceId\":[\"27\"],\"businessId\":[\"45\"],\"bookPublishDate\":[\"\"],\"bookId\":[\"测试1\"],\"bookName\":[\"测\"],\"bookPublish\":[\"测\"],\"bookAuthor\":[\"侧嗯嗯\"],\"bookPrice\":[\"111\"],\"instanceStatus\":[\"1\"]}', NULL, 1, 'For input string: \"测试1\"', '2021-04-23 14:14:51');
+INSERT INTO `sys_oper_log` VALUES (355, '入库申请', 2, 'com.ruoyi.web.controller.system.SysInstanceDealController.editSave()', 'POST', 1, 'admin', '研发', '/system/instancedeal/edit', '127.0.0.1', '内网IP', '{\"instanceId\":[\"27\"],\"businessId\":[\"45\"],\"bookPublishDate\":[\"\"],\"bookId\":[\"测试1\"],\"bookName\":[\"测\"],\"bookPublish\":[\"测\"],\"bookAuthor\":[\"侧嗯嗯\"],\"bookPrice\":[\"111\"],\"instanceStatus\":[\"1\"]}', NULL, 1, 'For input string: \"测试1\"', '2021-04-23 14:17:16');
+INSERT INTO `sys_oper_log` VALUES (356, '入库申请', 2, 'com.ruoyi.web.controller.system.SysInstanceDealController.editSave()', 'POST', 1, 'admin', '研发', '/system/instancedeal/edit', '127.0.0.1', '内网IP', '{\"instanceId\":[\"27\"],\"businessId\":[\"45\"],\"bookPublishDate\":[\"\"],\"bookId\":[\"C1\"],\"bookName\":[\"测\"],\"bookPublish\":[\"测\"],\"bookAuthor\":[\"侧嗯嗯\"],\"bookPrice\":[\"111\"],\"instanceStatus\":[\"1\"]}', NULL, 1, 'For input string: \"C1\"', '2021-04-23 14:17:50');
+INSERT INTO `sys_oper_log` VALUES (357, '入库申请', 2, 'com.ruoyi.web.controller.system.SysInstanceDealController.editSave()', 'POST', 1, 'admin', '研发', '/system/instancedeal/edit', '127.0.0.1', '内网IP', '{\"instanceId\":[\"27\"],\"businessId\":[\"45\"],\"bookPublishDate\":[\"\"],\"bookId\":[\"C1\"],\"bookName\":[\"测\"],\"bookPublish\":[\"测\"],\"bookAuthor\":[\"侧嗯嗯\"],\"bookPrice\":[\"111\"],\"instanceStatus\":[\"1\"]}', NULL, 1, 'For input string: \"C1\"', '2021-04-23 14:19:30');
+INSERT INTO `sys_oper_log` VALUES (358, '入库申请', 2, 'com.ruoyi.web.controller.system.SysInstanceDealController.editSave()', 'POST', 1, 'admin', '研发', '/system/instancedeal/edit', '127.0.0.1', '内网IP', '{\"instanceId\":[\"27\"],\"businessId\":[\"45\"],\"bookPublishDate\":[\"\"],\"bookId\":[\"C1\"],\"bookName\":[\"测\"],\"bookPublish\":[\"测\"],\"bookAuthor\":[\"侧嗯嗯\"],\"bookPrice\":[\"111\"],\"instanceStatus\":[\"1\"]}', NULL, 1, 'For input string: \"C1\"', '2021-04-23 14:19:40');
+INSERT INTO `sys_oper_log` VALUES (359, '入库申请', 2, 'com.ruoyi.web.controller.system.SysInstanceDealController.editSave()', 'POST', 1, 'admin', '研发', '/system/instancedeal/edit', '127.0.0.1', '内网IP', '{\"instanceId\":[\"27\"],\"businessId\":[\"45\"],\"bookPublishDate\":[\"\"],\"bookId\":[\"C1\"],\"bookName\":[\"测\"],\"bookPublish\":[\"测\"],\"bookAuthor\":[\"侧嗯嗯\"],\"bookPrice\":[\"111\"],\"instanceStatus\":[\"1\"]}', NULL, 1, 'For input string: \"C1\"', '2021-04-23 14:20:33');
+INSERT INTO `sys_oper_log` VALUES (360, '入库申请', 2, 'com.ruoyi.web.controller.system.SysInstanceDealController.editSave()', 'POST', 1, 'admin', '研发', '/system/instancedeal/edit', '127.0.0.1', '内网IP', '{\"instanceId\":[\"27\"],\"businessId\":[\"45\"],\"bookPublishDate\":[\"\"],\"bookId\":[\"C1\"],\"bookName\":[\"测\"],\"bookPublish\":[\"测\"],\"bookAuthor\":[\"侧嗯嗯\"],\"bookPrice\":[\"111\"],\"instanceStatus\":[\"1\"]}', '{\r\n  \"msg\" : \"操作成功\",\r\n  \"code\" : 0,\r\n  \"data\" : 1\r\n}', 0, NULL, '2021-04-23 14:21:46');
+INSERT INTO `sys_oper_log` VALUES (361, '账户解锁', 0, 'com.ruoyi.web.controller.monitor.SysLogininforController.unlock()', 'POST', 1, 'admin', '研发', '/monitor/logininfor/unlock', '127.0.0.1', '内网IP', '{\"loginName\":[\"admin\"]}', '{\r\n  \"msg\" : \"操作成功\",\r\n  \"code\" : 0\r\n}', 0, NULL, '2021-04-28 16:14:10');
+INSERT INTO `sys_oper_log` VALUES (362, '入库申请', 1, 'com.ruoyi.web.controller.system.SysInstanceController.addSave()', 'POST', 1, 'admin', '研发', '/system/instance/add', '127.0.0.1', '内网IP', '{\"house\":[\"3\"],\"bookId\":[\"2\"],\"bookName\":[\"2\"],\"bookPublish\":[\"2\"],\"bookAuthor\":[\"2\"],\"bookPrice\":[\"2\"],\"createDate\":[\"\"],\"houseFlag\":[\"1\"]}', '{\r\n  \"msg\" : \"操作成功\",\r\n  \"code\" : 0,\r\n  \"data\" : 1\r\n}', 0, NULL, '2021-04-29 13:29:16');
+INSERT INTO `sys_oper_log` VALUES (363, '入库申请', 2, 'com.ruoyi.web.controller.system.SysInstanceDealController.editSave()', 'POST', 1, 'admin', '研发', '/system/instancedeal/edit', '127.0.0.1', '内网IP', '{\"instanceId\":[\"28\"],\"businessId\":[\"46\"],\"bookPublishDate\":[\"\"],\"bookId\":[\"2\"],\"bookName\":[\"2\"],\"bookPublish\":[\"2\"],\"bookAuthor\":[\"2\"],\"bookPrice\":[\"2\"],\"instanceStatus\":[\"1\"]}', '{\r\n  \"msg\" : \"操作成功\",\r\n  \"code\" : 0,\r\n  \"data\" : 1\r\n}', 0, NULL, '2021-04-29 13:29:23');
+INSERT INTO `sys_oper_log` VALUES (364, '入库申请', 1, 'com.ruoyi.web.controller.system.SysInstanceController.addSave()', 'POST', 1, 'admin', '研发', '/system/instance/add', '127.0.0.1', '内网IP', '{\"house\":[\"3\"],\"bookId\":[\"3\"],\"bookName\":[\"3\"],\"bookPublish\":[\"3\"],\"bookAuthor\":[\"3\"],\"bookPrice\":[\"3\"],\"createDate\":[\"\"],\"houseFlag\":[\"1\"]}', '{\r\n  \"msg\" : \"操作成功\",\r\n  \"code\" : 0,\r\n  \"data\" : 1\r\n}', 0, NULL, '2021-04-29 13:29:47');
+INSERT INTO `sys_oper_log` VALUES (365, '入库申请', 2, 'com.ruoyi.web.controller.system.SysInstanceDealController.editSave()', 'POST', 1, 'admin', '研发', '/system/instancedeal/edit', '127.0.0.1', '内网IP', '{\"instanceId\":[\"29\"],\"businessId\":[\"47\"],\"bookPublishDate\":[\"\"],\"bookId\":[\"3\"],\"bookName\":[\"3\"],\"bookPublish\":[\"3\"],\"bookAuthor\":[\"3\"],\"bookPrice\":[\"3\"],\"instanceStatus\":[\"1\"]}', '{\r\n  \"msg\" : \"操作成功\",\r\n  \"code\" : 0,\r\n  \"data\" : 1\r\n}', 0, NULL, '2021-04-29 13:30:01');
+INSERT INTO `sys_oper_log` VALUES (366, '用户管理', 2, 'com.ruoyi.web.controller.system.SysUserController.editSave()', 'POST', 1, 'admin', '研发', '/system/user/edit', '127.0.0.1', '内网IP', '{\"userId\":[\"1\"],\"deptId\":[\"200\"],\"userName\":[\"茶叶\"],\"dept.deptName\":[\"仓库小王子\"],\"phonenumber\":[\"15888888888\"],\"email\":[\"ry@163.com\"],\"loginName\":[\"admin\"],\"sex\":[\"1\"],\"role\":[\"1\"],\"remark\":[\"管理员\"],\"status\":[\"0\"],\"roleIds\":[\"1\"],\"postIds\":[\"1\"]}', NULL, 1, '不允许操作超级管理员用户', '2021-04-29 13:41:26');
+INSERT INTO `sys_oper_log` VALUES (367, '用户管理', 2, 'com.ruoyi.web.controller.system.SysUserController.editSave()', 'POST', 1, 'admin', '研发', '/system/user/edit', '127.0.0.1', '内网IP', '{\"userId\":[\"1\"],\"deptId\":[\"200\"],\"userName\":[\"茶叶\"],\"dept.deptName\":[\"仓库小王子\"],\"phonenumber\":[\"15888888888\"],\"email\":[\"ry@163.com\"],\"loginName\":[\"admin\"],\"sex\":[\"1\"],\"role\":[\"2\"],\"remark\":[\"管理员\"],\"status\":[\"0\"],\"roleIds\":[\"2\"],\"postIds\":[\"1\"]}', NULL, 1, '不允许操作超级管理员用户', '2021-04-29 13:41:37');
+INSERT INTO `sys_oper_log` VALUES (368, '菜单管理', 2, 'com.ruoyi.web.controller.system.SysMenuController.editSave()', 'POST', 1, 'admin', '研发', '/system/menu/edit', '127.0.0.1', '内网IP', '{\"menuId\":[\"103\"],\"parentId\":[\"1\"],\"menuType\":[\"C\"],\"menuName\":[\"部门管理\"],\"url\":[\"/system/dept\"],\"target\":[\"menuItem\"],\"perms\":[\"system:dept:view\"],\"orderNum\":[\"4\"],\"icon\":[\"fa fa-outdent\"],\"visible\":[\"0\"],\"isRefresh\":[\"0\"]}', '{\r\n  \"msg\" : \"操作成功\",\r\n  \"code\" : 0\r\n}', 0, NULL, '2021-04-29 13:45:12');
+INSERT INTO `sys_oper_log` VALUES (369, '部门管理', 2, 'com.ruoyi.web.controller.system.SysDeptController.editSave()', 'POST', 1, 'admin', '研发', '/system/dept/edit', '127.0.0.1', '内网IP', '{\"deptId\":[\"103\"],\"parentId\":[\"100\"],\"parentName\":[\"书务系统\"],\"deptName\":[\"研发\"],\"orderNum\":[\"1\"],\"leader\":[\"若依\"],\"phone\":[\"15888888888\"],\"email\":[\"ry@qq.com\"],\"status\":[\"0\"]}', '{\r\n  \"msg\" : \"操作成功\",\r\n  \"code\" : 0\r\n}', 0, NULL, '2021-04-29 13:46:14');
+INSERT INTO `sys_oper_log` VALUES (370, '部门管理', 2, 'com.ruoyi.web.controller.system.SysDeptController.editSave()', 'POST', 1, 'admin', '研发', '/system/dept/edit', '127.0.0.1', '内网IP', '{\"deptId\":[\"105\"],\"parentId\":[\"100\"],\"parentName\":[\"书务系统\"],\"deptName\":[\"测试\"],\"orderNum\":[\"3\"],\"leader\":[\"若依\"],\"phone\":[\"15888888888\"],\"email\":[\"ry@qq.com\"],\"status\":[\"0\"]}', '{\r\n  \"msg\" : \"操作成功\",\r\n  \"code\" : 0\r\n}', 0, NULL, '2021-04-29 13:46:34');
+INSERT INTO `sys_oper_log` VALUES (371, '部门管理', 3, 'com.ruoyi.web.controller.system.SysDeptController.remove()', 'GET', 1, 'admin', '研发', '/system/dept/remove/101', '127.0.0.1', '内网IP', NULL, '{\r\n  \"msg\" : \"操作成功\",\r\n  \"code\" : 0\r\n}', 0, NULL, '2021-04-29 13:46:39');
+INSERT INTO `sys_oper_log` VALUES (372, '部门管理', 2, 'com.ruoyi.web.controller.system.SysDeptController.editSave()', 'POST', 1, 'admin', '研发', '/system/dept/edit', '127.0.0.1', '内网IP', '{\"deptId\":[\"103\"],\"parentId\":[\"100\"],\"parentName\":[\"书务系统\"],\"deptName\":[\"超级管理员\"],\"orderNum\":[\"1\"],\"leader\":[\"ltz\"],\"phone\":[\"15888888888\"],\"email\":[\"ltz@qq.com\"],\"status\":[\"0\"]}', '{\r\n  \"msg\" : \"操作成功\",\r\n  \"code\" : 0\r\n}', 0, NULL, '2021-04-29 13:47:13');
+INSERT INTO `sys_oper_log` VALUES (373, '部门管理', 3, 'com.ruoyi.web.controller.system.SysDeptController.remove()', 'GET', 1, 'admin', '研发', '/system/dept/remove/105', '127.0.0.1', '内网IP', NULL, '{\r\n  \"msg\" : \"部门存在用户,不允许删除\",\r\n  \"code\" : 301\r\n}', 0, NULL, '2021-04-29 13:47:33');
+INSERT INTO `sys_oper_log` VALUES (374, '用户管理', 3, 'com.ruoyi.web.controller.system.SysUserController.remove()', 'POST', 1, 'admin', '研发', '/system/user/remove', '127.0.0.1', '内网IP', '{\"ids\":[\"2\"]}', '{\r\n  \"msg\" : \"操作成功\",\r\n  \"code\" : 0\r\n}', 0, NULL, '2021-04-29 13:47:41');
+INSERT INTO `sys_oper_log` VALUES (375, '部门管理', 3, 'com.ruoyi.web.controller.system.SysDeptController.remove()', 'GET', 1, 'admin', '研发', '/system/dept/remove/105', '127.0.0.1', '内网IP', NULL, '{\r\n  \"msg\" : \"操作成功\",\r\n  \"code\" : 0\r\n}', 0, NULL, '2021-04-29 13:47:47');
+INSERT INTO `sys_oper_log` VALUES (376, '部门管理', 2, 'com.ruoyi.web.controller.system.SysDeptController.editSave()', 'POST', 1, 'admin', '研发', '/system/dept/edit', '127.0.0.1', '内网IP', '{\"deptId\":[\"200\"],\"parentId\":[\"100\"],\"parentName\":[\"书务系统\"],\"deptName\":[\"仓库管理员\"],\"orderNum\":[\"0\"],\"leader\":[\"刘库管\"],\"phone\":[\"\"],\"email\":[\"\"],\"status\":[\"0\"]}', '{\r\n  \"msg\" : \"操作成功\",\r\n  \"code\" : 0\r\n}', 0, NULL, '2021-04-29 13:50:14');
+INSERT INTO `sys_oper_log` VALUES (377, '部门管理', 2, 'com.ruoyi.web.controller.system.SysDeptController.editSave()', 'POST', 1, 'admin', '研发', '/system/dept/edit', '127.0.0.1', '内网IP', '{\"deptId\":[\"201\"],\"parentId\":[\"100\"],\"parentName\":[\"书务系统\"],\"deptName\":[\"书务管理员\"],\"orderNum\":[\"0\"],\"leader\":[\"1\"],\"phone\":[\"\"],\"email\":[\"\"],\"status\":[\"0\"]}', '{\r\n  \"msg\" : \"操作成功\",\r\n  \"code\" : 0\r\n}', 0, NULL, '2021-04-29 13:50:37');
+INSERT INTO `sys_oper_log` VALUES (378, '菜单管理', 2, 'com.ruoyi.web.controller.system.SysMenuController.editSave()', 'POST', 1, 'admin', '研发', '/system/menu/edit', '127.0.0.1', '内网IP', '{\"menuId\":[\"103\"],\"parentId\":[\"1\"],\"menuType\":[\"C\"],\"menuName\":[\"部门管理\"],\"url\":[\"/system/dept\"],\"target\":[\"menuItem\"],\"perms\":[\"system:dept:view\"],\"orderNum\":[\"4\"],\"icon\":[\"fa fa-outdent\"],\"visible\":[\"1\"],\"isRefresh\":[\"0\"]}', '{\r\n  \"msg\" : \"操作成功\",\r\n  \"code\" : 0\r\n}', 0, NULL, '2021-04-29 13:50:58');
+INSERT INTO `sys_oper_log` VALUES (379, '角色管理', 3, 'com.ruoyi.web.controller.system.SysRoleController.remove()', 'POST', 1, 'admin', '研发', '/system/role/remove', '127.0.0.1', '内网IP', '{\"ids\":[\"2\"]}', '{\r\n  \"msg\" : \"操作成功\",\r\n  \"code\" : 0\r\n}', 0, NULL, '2021-04-29 13:51:31');
+INSERT INTO `sys_oper_log` VALUES (380, '角色管理', 2, 'com.ruoyi.web.controller.system.SysRoleController.editSave()', 'POST', 1, 'admin', '研发', '/system/role/edit', '127.0.0.1', '内网IP', '{\"roleId\":[\"101\"],\"roleName\":[\"书务管理员\"],\"roleKey\":[\"deal\"],\"roleSort\":[\"3\"],\"status\":[\"0\"],\"remark\":[\"\"],\"menuIds\":[\"1,100,1000,1001,1002,1003,1004,1005,1006,2008,2016,2020,2021,2022\"]}', '{\r\n  \"msg\" : \"操作成功\",\r\n  \"code\" : 0\r\n}', 0, NULL, '2021-04-29 13:52:41');
+INSERT INTO `sys_oper_log` VALUES (381, '角色管理', 2, 'com.ruoyi.web.controller.system.SysRoleController.editSave()', 'POST', 1, 'admin', '研发', '/system/role/edit', '127.0.0.1', '内网IP', '{\"roleId\":[\"100\"],\"roleName\":[\"仓库管理员\"],\"roleKey\":[\"manager\"],\"roleSort\":[\"2\"],\"status\":[\"0\"],\"remark\":[\"仓库管理员\"],\"menuIds\":[\"2001,2002,2003,2005,2004,2006,2007,1,100,1000,1001,1002,1003,1004,1005,1006,101,1007,1008,1009,1010,1011,102,1012,1013,1014,1015,103,1016,1017,1018,1019,104,1020,1021,1022,1023,1024,105,1025,1026,1027,1028,1029,106,1030,1031,1032,1033,1034,107,1035,1036,1037,1038,108,500,1039,1040,1041,1042,501,1043,1044,1045,1046,2008,2009,2010,2011,2012,2013,2014,2017,2018,2023,2024,2025,2026,2027,2019,2028\"]}', '{\r\n  \"msg\" : \"操作成功\",\r\n  \"code\" : 0\r\n}', 0, NULL, '2021-04-29 13:52:58');
+INSERT INTO `sys_oper_log` VALUES (382, '菜单管理', 2, 'com.ruoyi.web.controller.system.SysMenuController.editSave()', 'POST', 1, 'admin', '超级管理员', '/system/menu/edit', '127.0.0.1', '内网IP', '{\"menuId\":[\"103\"],\"parentId\":[\"1\"],\"menuType\":[\"C\"],\"menuName\":[\"部门管理\"],\"url\":[\"/system/dept\"],\"target\":[\"menuItem\"],\"perms\":[\"system:dept:view\"],\"orderNum\":[\"4\"],\"icon\":[\"fa fa-outdent\"],\"visible\":[\"0\"],\"isRefresh\":[\"0\"]}', '{\r\n  \"msg\" : \"操作成功\",\r\n  \"code\" : 0\r\n}', 0, NULL, '2021-04-29 13:55:20');
+INSERT INTO `sys_oper_log` VALUES (383, '部门管理', 2, 'com.ruoyi.web.controller.system.SysDeptController.editSave()', 'POST', 1, 'admin', '超级管理员', '/system/dept/edit', '127.0.0.1', '内网IP', '{\"deptId\":[\"100\"],\"parentId\":[\"0\"],\"parentName\":[\"无\"],\"deptName\":[\"书店书务信息管理系统\"],\"orderNum\":[\"0\"],\"leader\":[\"111\"],\"phone\":[\"15888888888\"],\"email\":[\"11@qq.com\"],\"status\":[\"0\"]}', '{\r\n  \"msg\" : \"操作成功\",\r\n  \"code\" : 0\r\n}', 0, NULL, '2021-04-29 13:55:42');
+INSERT INTO `sys_oper_log` VALUES (384, '菜单管理', 2, 'com.ruoyi.web.controller.system.SysMenuController.editSave()', 'POST', 1, 'admin', '超级管理员', '/system/menu/edit', '127.0.0.1', '内网IP', '{\"menuId\":[\"103\"],\"parentId\":[\"1\"],\"menuType\":[\"C\"],\"menuName\":[\"部门管理\"],\"url\":[\"/system/dept\"],\"target\":[\"menuItem\"],\"perms\":[\"system:dept:view\"],\"orderNum\":[\"4\"],\"icon\":[\"fa fa-outdent\"],\"visible\":[\"1\"],\"isRefresh\":[\"0\"]}', '{\r\n  \"msg\" : \"操作成功\",\r\n  \"code\" : 0\r\n}', 0, NULL, '2021-04-29 13:55:58');
 
 -- ----------------------------
 -- Table structure for sys_post
@@ -1215,14 +1472,15 @@ CREATE TABLE `sys_role`  (
   `update_time` datetime NULL DEFAULT NULL COMMENT '更新时间',
   `remark` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`role_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 101 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '角色信息表' ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 102 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '角色信息表' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of sys_role
 -- ----------------------------
 INSERT INTO `sys_role` VALUES (1, '超级管理员', 'admin', 1, '1', '0', '0', 'admin', '2021-04-01 09:40:57', '', NULL, '超级管理员');
-INSERT INTO `sys_role` VALUES (2, '普通角色', 'common', 2, '2', '0', '0', 'admin', '2021-04-01 09:40:57', '', NULL, '普通角色');
-INSERT INTO `sys_role` VALUES (100, '仓库管理员', 'manager', 2, '2', '0', '0', 'admin', '2021-04-01 17:57:00', 'admin', '2021-04-06 14:57:17', '仓库管理员');
+INSERT INTO `sys_role` VALUES (2, '普通角色', 'common', 2, '2', '0', '2', 'admin', '2021-04-01 09:40:57', '', NULL, '普通角色');
+INSERT INTO `sys_role` VALUES (100, '仓库管理员', 'manager', 2, '2', '0', '0', 'admin', '2021-04-01 17:57:00', 'admin', '2021-04-29 13:52:58', '仓库管理员');
+INSERT INTO `sys_role` VALUES (101, '书务管理员', 'deal', 3, '1', '0', '0', 'admin', '2021-04-12 10:57:19', 'admin', '2021-04-29 13:52:41', '');
 
 -- ----------------------------
 -- Table structure for sys_role_dept
@@ -1237,9 +1495,6 @@ CREATE TABLE `sys_role_dept`  (
 -- ----------------------------
 -- Records of sys_role_dept
 -- ----------------------------
-INSERT INTO `sys_role_dept` VALUES (2, 100);
-INSERT INTO `sys_role_dept` VALUES (2, 101);
-INSERT INTO `sys_role_dept` VALUES (2, 105);
 INSERT INTO `sys_role_dept` VALUES (100, 100);
 INSERT INTO `sys_role_dept` VALUES (100, 200);
 
@@ -1256,91 +1511,65 @@ CREATE TABLE `sys_role_menu`  (
 -- ----------------------------
 -- Records of sys_role_menu
 -- ----------------------------
-INSERT INTO `sys_role_menu` VALUES (2, 1);
-INSERT INTO `sys_role_menu` VALUES (2, 2);
-INSERT INTO `sys_role_menu` VALUES (2, 3);
-INSERT INTO `sys_role_menu` VALUES (2, 4);
-INSERT INTO `sys_role_menu` VALUES (2, 100);
-INSERT INTO `sys_role_menu` VALUES (2, 101);
-INSERT INTO `sys_role_menu` VALUES (2, 102);
-INSERT INTO `sys_role_menu` VALUES (2, 103);
-INSERT INTO `sys_role_menu` VALUES (2, 104);
-INSERT INTO `sys_role_menu` VALUES (2, 105);
-INSERT INTO `sys_role_menu` VALUES (2, 106);
-INSERT INTO `sys_role_menu` VALUES (2, 107);
-INSERT INTO `sys_role_menu` VALUES (2, 108);
-INSERT INTO `sys_role_menu` VALUES (2, 109);
-INSERT INTO `sys_role_menu` VALUES (2, 110);
-INSERT INTO `sys_role_menu` VALUES (2, 111);
-INSERT INTO `sys_role_menu` VALUES (2, 112);
-INSERT INTO `sys_role_menu` VALUES (2, 113);
-INSERT INTO `sys_role_menu` VALUES (2, 114);
-INSERT INTO `sys_role_menu` VALUES (2, 115);
-INSERT INTO `sys_role_menu` VALUES (2, 116);
-INSERT INTO `sys_role_menu` VALUES (2, 500);
-INSERT INTO `sys_role_menu` VALUES (2, 501);
-INSERT INTO `sys_role_menu` VALUES (2, 1000);
-INSERT INTO `sys_role_menu` VALUES (2, 1001);
-INSERT INTO `sys_role_menu` VALUES (2, 1002);
-INSERT INTO `sys_role_menu` VALUES (2, 1003);
-INSERT INTO `sys_role_menu` VALUES (2, 1004);
-INSERT INTO `sys_role_menu` VALUES (2, 1005);
-INSERT INTO `sys_role_menu` VALUES (2, 1006);
-INSERT INTO `sys_role_menu` VALUES (2, 1007);
-INSERT INTO `sys_role_menu` VALUES (2, 1008);
-INSERT INTO `sys_role_menu` VALUES (2, 1009);
-INSERT INTO `sys_role_menu` VALUES (2, 1010);
-INSERT INTO `sys_role_menu` VALUES (2, 1011);
-INSERT INTO `sys_role_menu` VALUES (2, 1012);
-INSERT INTO `sys_role_menu` VALUES (2, 1013);
-INSERT INTO `sys_role_menu` VALUES (2, 1014);
-INSERT INTO `sys_role_menu` VALUES (2, 1015);
-INSERT INTO `sys_role_menu` VALUES (2, 1016);
-INSERT INTO `sys_role_menu` VALUES (2, 1017);
-INSERT INTO `sys_role_menu` VALUES (2, 1018);
-INSERT INTO `sys_role_menu` VALUES (2, 1019);
-INSERT INTO `sys_role_menu` VALUES (2, 1020);
-INSERT INTO `sys_role_menu` VALUES (2, 1021);
-INSERT INTO `sys_role_menu` VALUES (2, 1022);
-INSERT INTO `sys_role_menu` VALUES (2, 1023);
-INSERT INTO `sys_role_menu` VALUES (2, 1024);
-INSERT INTO `sys_role_menu` VALUES (2, 1025);
-INSERT INTO `sys_role_menu` VALUES (2, 1026);
-INSERT INTO `sys_role_menu` VALUES (2, 1027);
-INSERT INTO `sys_role_menu` VALUES (2, 1028);
-INSERT INTO `sys_role_menu` VALUES (2, 1029);
-INSERT INTO `sys_role_menu` VALUES (2, 1030);
-INSERT INTO `sys_role_menu` VALUES (2, 1031);
-INSERT INTO `sys_role_menu` VALUES (2, 1032);
-INSERT INTO `sys_role_menu` VALUES (2, 1033);
-INSERT INTO `sys_role_menu` VALUES (2, 1034);
-INSERT INTO `sys_role_menu` VALUES (2, 1035);
-INSERT INTO `sys_role_menu` VALUES (2, 1036);
-INSERT INTO `sys_role_menu` VALUES (2, 1037);
-INSERT INTO `sys_role_menu` VALUES (2, 1038);
-INSERT INTO `sys_role_menu` VALUES (2, 1039);
-INSERT INTO `sys_role_menu` VALUES (2, 1040);
-INSERT INTO `sys_role_menu` VALUES (2, 1041);
-INSERT INTO `sys_role_menu` VALUES (2, 1042);
-INSERT INTO `sys_role_menu` VALUES (2, 1043);
-INSERT INTO `sys_role_menu` VALUES (2, 1044);
-INSERT INTO `sys_role_menu` VALUES (2, 1045);
-INSERT INTO `sys_role_menu` VALUES (2, 1046);
-INSERT INTO `sys_role_menu` VALUES (2, 1047);
-INSERT INTO `sys_role_menu` VALUES (2, 1048);
-INSERT INTO `sys_role_menu` VALUES (2, 1049);
-INSERT INTO `sys_role_menu` VALUES (2, 1050);
-INSERT INTO `sys_role_menu` VALUES (2, 1051);
-INSERT INTO `sys_role_menu` VALUES (2, 1052);
-INSERT INTO `sys_role_menu` VALUES (2, 1053);
-INSERT INTO `sys_role_menu` VALUES (2, 1054);
-INSERT INTO `sys_role_menu` VALUES (2, 1055);
-INSERT INTO `sys_role_menu` VALUES (2, 1056);
-INSERT INTO `sys_role_menu` VALUES (2, 1057);
-INSERT INTO `sys_role_menu` VALUES (2, 1058);
-INSERT INTO `sys_role_menu` VALUES (2, 1059);
-INSERT INTO `sys_role_menu` VALUES (2, 1060);
-INSERT INTO `sys_role_menu` VALUES (2, 1061);
+INSERT INTO `sys_role_menu` VALUES (100, 1);
+INSERT INTO `sys_role_menu` VALUES (100, 100);
+INSERT INTO `sys_role_menu` VALUES (100, 101);
+INSERT INTO `sys_role_menu` VALUES (100, 102);
+INSERT INTO `sys_role_menu` VALUES (100, 103);
+INSERT INTO `sys_role_menu` VALUES (100, 104);
+INSERT INTO `sys_role_menu` VALUES (100, 105);
+INSERT INTO `sys_role_menu` VALUES (100, 106);
+INSERT INTO `sys_role_menu` VALUES (100, 107);
+INSERT INTO `sys_role_menu` VALUES (100, 108);
+INSERT INTO `sys_role_menu` VALUES (100, 500);
+INSERT INTO `sys_role_menu` VALUES (100, 501);
+INSERT INTO `sys_role_menu` VALUES (100, 1000);
+INSERT INTO `sys_role_menu` VALUES (100, 1001);
+INSERT INTO `sys_role_menu` VALUES (100, 1002);
+INSERT INTO `sys_role_menu` VALUES (100, 1003);
+INSERT INTO `sys_role_menu` VALUES (100, 1004);
+INSERT INTO `sys_role_menu` VALUES (100, 1005);
+INSERT INTO `sys_role_menu` VALUES (100, 1006);
+INSERT INTO `sys_role_menu` VALUES (100, 1007);
+INSERT INTO `sys_role_menu` VALUES (100, 1008);
+INSERT INTO `sys_role_menu` VALUES (100, 1009);
+INSERT INTO `sys_role_menu` VALUES (100, 1010);
+INSERT INTO `sys_role_menu` VALUES (100, 1011);
+INSERT INTO `sys_role_menu` VALUES (100, 1012);
+INSERT INTO `sys_role_menu` VALUES (100, 1013);
+INSERT INTO `sys_role_menu` VALUES (100, 1014);
+INSERT INTO `sys_role_menu` VALUES (100, 1015);
+INSERT INTO `sys_role_menu` VALUES (100, 1016);
+INSERT INTO `sys_role_menu` VALUES (100, 1017);
+INSERT INTO `sys_role_menu` VALUES (100, 1018);
+INSERT INTO `sys_role_menu` VALUES (100, 1019);
+INSERT INTO `sys_role_menu` VALUES (100, 1020);
+INSERT INTO `sys_role_menu` VALUES (100, 1021);
+INSERT INTO `sys_role_menu` VALUES (100, 1022);
+INSERT INTO `sys_role_menu` VALUES (100, 1023);
+INSERT INTO `sys_role_menu` VALUES (100, 1024);
+INSERT INTO `sys_role_menu` VALUES (100, 1025);
+INSERT INTO `sys_role_menu` VALUES (100, 1026);
+INSERT INTO `sys_role_menu` VALUES (100, 1027);
+INSERT INTO `sys_role_menu` VALUES (100, 1028);
+INSERT INTO `sys_role_menu` VALUES (100, 1029);
+INSERT INTO `sys_role_menu` VALUES (100, 1030);
+INSERT INTO `sys_role_menu` VALUES (100, 1031);
+INSERT INTO `sys_role_menu` VALUES (100, 1032);
+INSERT INTO `sys_role_menu` VALUES (100, 1033);
+INSERT INTO `sys_role_menu` VALUES (100, 1034);
+INSERT INTO `sys_role_menu` VALUES (100, 1035);
+INSERT INTO `sys_role_menu` VALUES (100, 1036);
+INSERT INTO `sys_role_menu` VALUES (100, 1037);
+INSERT INTO `sys_role_menu` VALUES (100, 1038);
+INSERT INTO `sys_role_menu` VALUES (100, 1039);
+INSERT INTO `sys_role_menu` VALUES (100, 1040);
+INSERT INTO `sys_role_menu` VALUES (100, 1041);
+INSERT INTO `sys_role_menu` VALUES (100, 1042);
+INSERT INTO `sys_role_menu` VALUES (100, 1043);
+INSERT INTO `sys_role_menu` VALUES (100, 1044);
+INSERT INTO `sys_role_menu` VALUES (100, 1045);
+INSERT INTO `sys_role_menu` VALUES (100, 1046);
 INSERT INTO `sys_role_menu` VALUES (100, 2001);
 INSERT INTO `sys_role_menu` VALUES (100, 2002);
 INSERT INTO `sys_role_menu` VALUES (100, 2003);
@@ -1355,6 +1584,29 @@ INSERT INTO `sys_role_menu` VALUES (100, 2011);
 INSERT INTO `sys_role_menu` VALUES (100, 2012);
 INSERT INTO `sys_role_menu` VALUES (100, 2013);
 INSERT INTO `sys_role_menu` VALUES (100, 2014);
+INSERT INTO `sys_role_menu` VALUES (100, 2017);
+INSERT INTO `sys_role_menu` VALUES (100, 2018);
+INSERT INTO `sys_role_menu` VALUES (100, 2019);
+INSERT INTO `sys_role_menu` VALUES (100, 2023);
+INSERT INTO `sys_role_menu` VALUES (100, 2024);
+INSERT INTO `sys_role_menu` VALUES (100, 2025);
+INSERT INTO `sys_role_menu` VALUES (100, 2026);
+INSERT INTO `sys_role_menu` VALUES (100, 2027);
+INSERT INTO `sys_role_menu` VALUES (100, 2028);
+INSERT INTO `sys_role_menu` VALUES (101, 1);
+INSERT INTO `sys_role_menu` VALUES (101, 100);
+INSERT INTO `sys_role_menu` VALUES (101, 1000);
+INSERT INTO `sys_role_menu` VALUES (101, 1001);
+INSERT INTO `sys_role_menu` VALUES (101, 1002);
+INSERT INTO `sys_role_menu` VALUES (101, 1003);
+INSERT INTO `sys_role_menu` VALUES (101, 1004);
+INSERT INTO `sys_role_menu` VALUES (101, 1005);
+INSERT INTO `sys_role_menu` VALUES (101, 1006);
+INSERT INTO `sys_role_menu` VALUES (101, 2008);
+INSERT INTO `sys_role_menu` VALUES (101, 2016);
+INSERT INTO `sys_role_menu` VALUES (101, 2020);
+INSERT INTO `sys_role_menu` VALUES (101, 2021);
+INSERT INTO `sys_role_menu` VALUES (101, 2022);
 
 -- ----------------------------
 -- Table structure for sys_user
@@ -1383,14 +1635,15 @@ CREATE TABLE `sys_user`  (
   `update_time` datetime NULL DEFAULT NULL COMMENT '更新时间',
   `remark` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`user_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 101 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '用户信息表' ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 102 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '用户信息表' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of sys_user
 -- ----------------------------
-INSERT INTO `sys_user` VALUES (1, 103, 'admin', '小刘同学', '00', 'ry@163.com', '15888888888', '1', '', '29c67a30398638269fe600f73a054934', '111111', '0', '0', '127.0.0.1', '2021-04-10 07:55:34', '2021-04-01 09:40:57', 'admin', '2021-04-01 09:40:57', '', '2021-04-10 07:55:34', '管理员');
-INSERT INTO `sys_user` VALUES (2, 105, 'ry', '小茗同学', '00', 'ry@qq.com', '15666666666', '1', '', '7e3a9a68c03f77e9bc67871bd3cb10b8', 'df5125', '0', '0', '127.0.0.1', '2021-04-01 09:40:57', '2021-04-01 09:40:57', 'admin', '2021-04-01 09:40:57', '', '2021-04-01 09:46:48', '测试员');
-INSERT INTO `sys_user` VALUES (100, 200, '刘库管', '刘库管', '00', '', '', '0', '', 'd89c11f59cb66154c76b66a98e03bb14', 'df93ad', '0', '0', '127.0.0.1', '2021-04-08 19:34:49', NULL, 'admin', '2021-04-01 17:55:16', 'admin', '2021-04-08 19:34:49', '');
+INSERT INTO `sys_user` VALUES (1, 103, 'admin', '茶叶', '00', 'ry@163.com', '15888888888', '1', '/profile/avatar/2021/04/10/7097eb89-a22f-4419-a7f5-79704b18c220.png', '29c67a30398638269fe600f73a054934', '111111', '0', '0', '127.0.0.1', '2021-04-29 14:09:59', '2021-04-01 09:40:57', 'admin', '2021-04-01 09:40:57', '', '2021-04-29 14:09:59', '管理员');
+INSERT INTO `sys_user` VALUES (2, 105, 'ry', '小茗同学', '00', 'ry@qq.com', '15666666666', '1', '', '7e3a9a68c03f77e9bc67871bd3cb10b8', 'df5125', '0', '2', '127.0.0.1', '2021-04-01 09:40:57', '2021-04-01 09:40:57', 'admin', '2021-04-01 09:40:57', '', '2021-04-01 09:46:48', '测试员');
+INSERT INTO `sys_user` VALUES (100, 200, '刘库管', '刘库管', '00', '', '', '0', '', 'd89c11f59cb66154c76b66a98e03bb14', 'df93ad', '0', '0', '127.0.0.1', '2021-04-12 11:33:06', NULL, 'admin', '2021-04-01 17:55:16', 'admin', '2021-04-12 11:33:06', '');
+INSERT INTO `sys_user` VALUES (101, 201, '刘审批', '刘审批', '00', '', '', '0', '', 'cd15ce3a08216e88ac6538bb5a38f0b6', 'd943b7', '0', '0', '127.0.0.1', '2021-04-29 13:53:30', NULL, 'admin', '2021-04-12 10:57:52', 'admin', '2021-04-29 13:53:30', '');
 
 -- ----------------------------
 -- Table structure for sys_user_online
@@ -1414,7 +1667,7 @@ CREATE TABLE `sys_user_online`  (
 -- ----------------------------
 -- Records of sys_user_online
 -- ----------------------------
-INSERT INTO `sys_user_online` VALUES ('f48723da-efd8-47b6-bdfb-de6bcb1ec27c', 'admin', '研发', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', 'on_line', '2021-04-10 05:51:04', '2021-04-10 08:00:28', 1800000);
+INSERT INTO `sys_user_online` VALUES ('42648ddd-a8f3-4a86-b2e2-8184689b5654', 'admin', '超级管理员', '127.0.0.1', '内网IP', 'Chrome 8', 'Windows 10', 'on_line', '2021-04-29 14:02:57', '2021-04-29 14:09:59', 1800000);
 
 -- ----------------------------
 -- Table structure for sys_user_post
@@ -1430,7 +1683,6 @@ CREATE TABLE `sys_user_post`  (
 -- Records of sys_user_post
 -- ----------------------------
 INSERT INTO `sys_user_post` VALUES (1, 1);
-INSERT INTO `sys_user_post` VALUES (2, 2);
 
 -- ----------------------------
 -- Table structure for sys_user_role
@@ -1446,7 +1698,7 @@ CREATE TABLE `sys_user_role`  (
 -- Records of sys_user_role
 -- ----------------------------
 INSERT INTO `sys_user_role` VALUES (1, 1);
-INSERT INTO `sys_user_role` VALUES (2, 2);
 INSERT INTO `sys_user_role` VALUES (100, 100);
+INSERT INTO `sys_user_role` VALUES (101, 101);
 
 SET FOREIGN_KEY_CHECKS = 1;
