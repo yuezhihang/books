@@ -2,7 +2,10 @@ package com.ruoyi.system.service.impl;
 
 import java.util.List;
 
+import com.ruoyi.system.domain.SysHouse;
 import com.ruoyi.system.domain.SysHouseBook;
+import com.ruoyi.system.mapper.SysHouseBookMapper;
+import com.ruoyi.system.mapper.SysHouseMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.ruoyi.system.mapper.SysBookBaseMapper;
@@ -21,6 +24,10 @@ public class SysBookBaseServiceImpl implements ISysBookBaseService
 {
     @Autowired
     private SysBookBaseMapper sysBookBaseMapper;
+    @Autowired
+    private SysHouseBookMapper sysHouseBookMapper;
+    @Autowired
+    private SysHouseMapper sysHouseMapper;
 
     /**
      * 查询图书基本信息
@@ -65,7 +72,16 @@ public class SysBookBaseServiceImpl implements ISysBookBaseService
     public int insertSysBookBase(SysBookBase sysBookBase)
     {
         sysBookBase.setFlag("0");
-        return sysBookBaseMapper.insertSysBookBase(sysBookBase);
+        sysBookBaseMapper.insertSysBookBase(sysBookBase);
+        SysHouseBook sysHouseBook=new SysHouseBook();
+        sysHouseBook.setHouseId(Long.valueOf(sysBookBase.getHouse()));
+        sysHouseBook.setBookId(Long.valueOf(sysBookBaseMapper.selectSysBookBaseList(sysBookBase).get(0).getBookId()));
+        sysHouseBook.setFlag("0");
+        SysHouse sysHouse=new SysHouse();
+        sysHouse.setBusinessId(Long.valueOf(sysBookBase.getHouse()));
+        sysHouse.setHouseBooks(sysHouseMapper.selectSysHouseById(Long.valueOf(sysBookBase.getHouse())).getHouseBooks()+1);
+        sysHouseMapper.updateSysHouse(sysHouse);
+        return  sysHouseBookMapper.insertSysHouseBook(sysHouseBook);
     }
 
     /**

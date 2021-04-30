@@ -55,7 +55,7 @@ public class CommonController
             FileUtils.writeBytes(filePath, response.getOutputStream());
             if (delete)
             {
-                FileUtils.deleteFile(filePath);
+//                FileUtils.deleteFile(filePath);
             }
         }
         catch (Exception e)
