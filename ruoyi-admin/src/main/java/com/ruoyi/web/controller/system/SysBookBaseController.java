@@ -95,7 +95,7 @@ public class SysBookBaseController extends BaseController
     @ResponseBody
     public AjaxResult addSave(SysBookBase sysBookBase)
     {
-        return toAjax(sysBookBaseService.insertSysBookBase(sysBookBase));
+        return sysBookBaseService.insertSysBookBase(sysBookBase);
     }
 
     /**

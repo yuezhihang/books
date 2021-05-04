@@ -1,6 +1,8 @@
 package com.ruoyi.system.service;
 
 import java.util.List;
+
+import com.ruoyi.common.core.domain.AjaxResult;
 import com.ruoyi.system.domain.SysBookBase;
 import com.ruoyi.system.domain.SysHouseBook;
 import org.apache.ibatis.annotations.Param;
@@ -35,7 +37,7 @@ public interface ISysBookBaseService
      * @param sysBookBase 图书基本信息
      * @return 结果
      */
-    public int insertSysBookBase(SysBookBase sysBookBase);
+    public AjaxResult insertSysBookBase(SysBookBase sysBookBase);
 
     /**
      * 修改图书基本信息

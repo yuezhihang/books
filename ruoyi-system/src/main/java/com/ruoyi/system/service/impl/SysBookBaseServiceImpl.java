@@ -2,6 +2,7 @@ package com.ruoyi.system.service.impl;
 
 import java.util.List;
 
+import com.ruoyi.common.core.domain.AjaxResult;
 import com.ruoyi.system.domain.SysHouse;
 import com.ruoyi.system.domain.SysHouseBook;
 import com.ruoyi.system.mapper.SysHouseBookMapper;
@@ -69,19 +70,30 @@ public class SysBookBaseServiceImpl implements ISysBookBaseService
      * @return 结果
      */
     @Override
-    public int insertSysBookBase(SysBookBase sysBookBase)
+    public AjaxResult insertSysBookBase(SysBookBase sysBookBase)
     {
-        sysBookBase.setFlag("0");
-        sysBookBaseMapper.insertSysBookBase(sysBookBase);
-        SysHouseBook sysHouseBook=new SysHouseBook();
-        sysHouseBook.setHouseId(Long.valueOf(sysBookBase.getHouse()));
-        sysHouseBook.setBookId(Long.valueOf(sysBookBaseMapper.selectSysBookBaseList(sysBookBase).get(0).getBookId()));
-        sysHouseBook.setFlag("0");
-        SysHouse sysHouse=new SysHouse();
-        sysHouse.setBusinessId(Long.valueOf(sysBookBase.getHouse()));
-        sysHouse.setHouseBooks(sysHouseMapper.selectSysHouseById(Long.valueOf(sysBookBase.getHouse())).getHouseBooks()+1);
-        sysHouseMapper.updateSysHouse(sysHouse);
-        return  sysHouseBookMapper.insertSysHouseBook(sysHouseBook);
+        if (null==sysBookBase.getBookId()||"".equals(sysBookBase.getBookId())){
+           return AjaxResult.error("图书标号不可为空!!!");
+        }else {
+            SysBookBase sysBookBase1 = new SysBookBase();
+            sysBookBase1.setBookId(sysBookBase.getBookId());
+            sysBookBase1.setFlag("0");
+            if (null!=sysBookBaseMapper.selectSysBookBaseList(sysBookBase1)&& sysBookBaseMapper.selectSysBookBaseList(sysBookBase1).size()>0){
+                return AjaxResult.error("图书编号不可重复，请更换图书编号");
+            }else {
+                sysBookBase.setFlag("0");
+                sysBookBaseMapper.insertSysBookBase(sysBookBase);
+                SysHouseBook sysHouseBook = new SysHouseBook();
+                sysHouseBook.setHouseId(Long.valueOf(sysBookBase.getHouse()));
+                sysHouseBook.setBookId(Long.valueOf(sysBookBaseMapper.selectSysBookBaseList(sysBookBase).get(0).getBookId()));
+                sysHouseBook.setFlag("0");
+                SysHouse sysHouse = new SysHouse();
+                sysHouse.setBusinessId(Long.valueOf(sysBookBase.getHouse()));
+                sysHouse.setHouseBooks(sysHouseMapper.selectSysHouseById(Long.valueOf(sysBookBase.getHouse())).getHouseBooks() + 1);
+                sysHouseMapper.updateSysHouse(sysHouse);
+                return AjaxResult.success(sysHouseBookMapper.insertSysHouseBook(sysHouseBook));
+            }
+        }
     }
 
     /**
